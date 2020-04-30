@@ -9,6 +9,8 @@ namespace Trabajo_Practico_4
     class GeneradorTabla
     {
         Random rnd = new Random();
+
+        //Generador de Random para el dia
         public double[] generadorRandomClima(int cantidad, int bandera) 
         {
             
@@ -33,6 +35,10 @@ namespace Trabajo_Practico_4
 
         }
 
+
+        //Coment 1
+        //Coment 2
+        //Coment 3
     }
 
     
