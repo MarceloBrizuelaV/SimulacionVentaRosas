@@ -8,3 +8,13 @@ F:\Datos\Facultad\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo Practi
 F:\Datos\Facultad\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo Practico 4.csproj.CoreCompileInputs.cache
 F:\Datos\Facultad\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo Practico 4.exe
 F:\Datos\Facultad\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo Practico 4.pdb
+C:\Users\guada\Desktop\UTN\Simulacion\Repositorio\tp4Sim\Trabajo Practico 4\bin\Debug\Trabajo Practico 4.exe.config
+C:\Users\guada\Desktop\UTN\Simulacion\Repositorio\tp4Sim\Trabajo Practico 4\bin\Debug\Trabajo Practico 4.exe
+C:\Users\guada\Desktop\UTN\Simulacion\Repositorio\tp4Sim\Trabajo Practico 4\bin\Debug\Trabajo Practico 4.pdb
+C:\Users\guada\Desktop\UTN\Simulacion\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo Practico 4.csprojAssemblyReference.cache
+C:\Users\guada\Desktop\UTN\Simulacion\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo_Practico_4.Form1.resources
+C:\Users\guada\Desktop\UTN\Simulacion\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo_Practico_4.Properties.Resources.resources
+C:\Users\guada\Desktop\UTN\Simulacion\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo Practico 4.csproj.GenerateResource.cache
+C:\Users\guada\Desktop\UTN\Simulacion\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo Practico 4.csproj.CoreCompileInputs.cache
+C:\Users\guada\Desktop\UTN\Simulacion\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo Practico 4.exe
+C:\Users\guada\Desktop\UTN\Simulacion\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo Practico 4.pdb
