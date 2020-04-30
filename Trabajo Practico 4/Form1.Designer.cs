@@ -43,9 +43,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(136, 32);
+            this.dataGridView1.Location = new System.Drawing.Point(38, 35);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(675, 236);
             this.dataGridView1.TabIndex = 0;
             // 
             // textBox1
@@ -74,7 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(119, 314);
+            this.label2.Location = new System.Drawing.Point(136, 314);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 4;
@@ -84,7 +84,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(221, 330);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(127, 20);
             this.textBox2.TabIndex = 5;
             // 
             // checkBox1
@@ -100,7 +100,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(221, 313);
+            this.label3.Location = new System.Drawing.Point(221, 314);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 13);
             this.label3.TabIndex = 7;
@@ -108,12 +108,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(108, 415);
+            this.button1.Location = new System.Drawing.Point(38, 391);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
+            this.button1.Text = "Calcular";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
