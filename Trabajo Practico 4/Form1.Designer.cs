@@ -43,9 +43,9 @@
             this.txtReserva = new System.Windows.Forms.TextBox();
             this.Ganancias = new System.Windows.Forms.DataGridView();
             this.gananciaDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPromedioGanancia = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataTablaBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ganancias)).BeginInit();
             this.SuspendLayout();
@@ -58,15 +58,10 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataTablaBase.Location = new System.Drawing.Point(51, 43);
-            this.dataTablaBase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataTablaBase.Location = new System.Drawing.Point(38, 35);
             this.dataTablaBase.Name = "dataTablaBase";
-
             this.dataTablaBase.RowHeadersWidth = 51;
-            
-
-            this.dataTablaBase.Size = new System.Drawing.Size(449, 236);
-
+            this.dataTablaBase.Size = new System.Drawing.Size(337, 192);
             this.dataTablaBase.TabIndex = 0;
             // 
             // Column1
@@ -99,47 +94,42 @@
             // 
             // txtCantidadDia
             // 
-            this.txtCantidadDia.Location = new System.Drawing.Point(16, 406);
-            this.txtCantidadDia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCantidadDia.Location = new System.Drawing.Point(12, 330);
             this.txtCantidadDia.Name = "txtCantidadDia";
-            this.txtCantidadDia.Size = new System.Drawing.Size(132, 22);
+            this.txtCantidadDia.Size = new System.Drawing.Size(100, 20);
             this.txtCantidadDia.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 386);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(9, 314);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 17);
+            this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Cantidad de Dia";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(181, 386);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(136, 314);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 17);
+            this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Reserva";
             // 
             // txtSimulaciones
             // 
-            this.txtSimulaciones.Location = new System.Drawing.Point(325, 406);
-            this.txtSimulaciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSimulaciones.Location = new System.Drawing.Point(244, 330);
             this.txtSimulaciones.Name = "txtSimulaciones";
-            this.txtSimulaciones.Size = new System.Drawing.Size(168, 22);
+            this.txtSimulaciones.Size = new System.Drawing.Size(127, 20);
             this.txtSimulaciones.TabIndex = 5;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(163, 438);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Location = new System.Drawing.Point(122, 356);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(105, 21);
+            this.checkBox1.Size = new System.Drawing.Size(81, 17);
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "Dia Anterior";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -147,19 +137,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(321, 386);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(241, 314);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(169, 17);
+            this.label3.Size = new System.Drawing.Size(127, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Cantidad de simulaciones";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(171, 484);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(128, 393);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
             this.button1.Text = "Calcular";
             this.button1.UseVisualStyleBackColor = true;
@@ -167,10 +155,9 @@
             // 
             // txtReserva
             // 
-            this.txtReserva.Location = new System.Drawing.Point(163, 406);
-            this.txtReserva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtReserva.Location = new System.Drawing.Point(122, 330);
             this.txtReserva.Name = "txtReserva";
-            this.txtReserva.Size = new System.Drawing.Size(132, 22);
+            this.txtReserva.Size = new System.Drawing.Size(100, 20);
             this.txtReserva.TabIndex = 9;
             // 
             // Ganancias
@@ -180,9 +167,10 @@
             this.Ganancias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gananciaDia,
             this.Column5});
-            this.Ganancias.Location = new System.Drawing.Point(506, 35);
+            this.Ganancias.Location = new System.Drawing.Point(380, 28);
+            this.Ganancias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Ganancias.Name = "Ganancias";
-            this.Ganancias.Size = new System.Drawing.Size(246, 236);
+            this.Ganancias.Size = new System.Drawing.Size(184, 192);
             this.Ganancias.TabIndex = 10;
             // 
             // gananciaDia
@@ -190,39 +178,38 @@
             this.gananciaDia.HeaderText = "Ganancia Dia";
             this.gananciaDia.Name = "gananciaDia";
             // 
-            // txtPromedioGanancia
-            // 
-            this.txtPromedioGanancia.Enabled = false;
-            this.txtPromedioGanancia.Location = new System.Drawing.Point(506, 330);
-            this.txtPromedioGanancia.Name = "txtPromedioGanancia";
-            this.txtPromedioGanancia.Size = new System.Drawing.Size(100, 20);
-            this.txtPromedioGanancia.TabIndex = 11;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(506, 313);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Ganancia Promedio";
-            // 
             // Column5
             // 
             this.Column5.HeaderText = "Column5";
             this.Column5.Name = "Column5";
             // 
+            // txtPromedioGanancia
+            // 
+            this.txtPromedioGanancia.Enabled = false;
+            this.txtPromedioGanancia.Location = new System.Drawing.Point(380, 268);
+            this.txtPromedioGanancia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPromedioGanancia.Name = "txtPromedioGanancia";
+            this.txtPromedioGanancia.Size = new System.Drawing.Size(76, 20);
+            this.txtPromedioGanancia.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(380, 254);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Ganancia Promedio";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(666, 450);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPromedioGanancia);
             this.Controls.Add(this.Ganancias);
-
             this.Controls.Add(this.txtReserva);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -232,7 +219,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCantidadDia);
             this.Controls.Add(this.dataTablaBase);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataTablaBase)).EndInit();
