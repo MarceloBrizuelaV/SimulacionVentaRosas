@@ -11,6 +11,29 @@ namespace Trabajo_Practico_4
         Random rnd = new Random();
 
         //Generador de Random para el dia
+
+        public double[] generadorRandomDemanda(int cantidad, int bandera)
+        {
+            if (bandera == 1)
+            {
+                double[] valoresDemanda = { 0.31, 0.87, 0.78, 0.97, 0.38, 0.63, 0.35, 0.83, 0.31, 0.14, 0.44, 0.68, 0.25, 0.06, 0.22, 0.77, 0.1, 0.29 };
+                return valoresDemanda;
+            }
+            else
+            {
+                double[] valoresDemanda = new double[cantidad];
+
+                for (int i = 0; i < cantidad; i++)
+                {
+                    valoresDemanda[i] = rnd.NextDouble();
+                }
+
+                return valoresDemanda;
+            }
+        }
+
+
+
         public double[] generadorRandomClima(int cantidad, int bandera) 
         {
             
@@ -35,9 +58,8 @@ namespace Trabajo_Practico_4
 
         }
 
-
         //Funcion que retorna el dia 
-        public int getClima( double random)
+        public int getClima(double random)
         {
             if(random <= 0.24)
             {
@@ -97,31 +119,34 @@ namespace Trabajo_Practico_4
         }
 
 
-        public double[] generadorRandomDemanda(int cantidad, int bandera)
+        public double[,] tablaBase(int cantidad, int bandera) 
         {
-            if (bandera == 1)
-            {
-                double[] valoresDemanda = {0.31, 0.87, 0.78, 0.97, 0.38, 0.63, 0.35, 0.83, 0.31, 0.14, 0.44, 0.68, 0.25, 0.06, 0.22, 0.77, 0.1, 0.29};
-                return valoresDemanda;
-            }
-            else
-            {
-                double[] valoresDemanda = new double[cantidad];
+            double[] demanda = generadorRandomDemanda(cantidad, bandera);
+            double[] clima = generadorRandomClima(cantidad, bandera);
 
-                for (int i = 0; i < cantidad; i++)
-                {
-                    valoresDemanda[i] = rnd.NextDouble();
-                }
 
-                return valoresDemanda;
+            double[,] matrizBase = new double[cantidad,4];
+
+            for (int i = 0; i < cantidad; i++)
+            {
+                //Cuento las iteraciones
+                matrizBase[i, 0] = i;
+
+                //Obtengo el clima
+                int climaFinal = getClima(clima[i]);
+                matrizBase[i, 1] = Convert.ToDouble(climaFinal);
+
+                //Obtengo la demanda
+                int demandaFinal = getDemanda(demanda[i], climaFinal);
+                matrizBase[i, 2] = Convert.ToDouble(demandaFinal);
+
+                //Calculo el precio
+                double precio = demandaFinal * 12;
+                matrizBase[i, 3] = precio;
             }
+
+            return matrizBase;
         }
-
-        //Simulador Principal
-      
-
-
-
 
     }
 
