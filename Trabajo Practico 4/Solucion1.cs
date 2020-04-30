@@ -42,7 +42,6 @@ namespace Trabajo_Practico_4
         {
             return col[col.Length - 1] / Convert.ToDouble(col.Length - 1);
         }
-        //HOLA
 
     }
 }
