@@ -35,9 +35,69 @@ namespace Trabajo_Practico_4
 
         }
 
+        //Funcion que retorna el dia 
+        public int getClima( double random)
+        {
+            if(random <= 0.24)
+            {
+                //Dia Nublado
+                return (2);
+            }
+            else
+            {
+                //Dia Soleado
+                return (1);
+            }
+        }
 
-       
-        //Comit Fran
+        //Funcion que retorna la demanda segun dia y random
+        public int getDemanda(double random, int dia) {
+            switch (dia)
+            {
+                case 1:
+                     if(random <= 0.09)
+                    {
+                        return (6);
+                    }
+                     else if( random <= 0.29)
+                    {
+                        return (7);
+                    }
+                     else if (random <= 0.74)
+                    {
+                        return (8);
+                    }
+                    else return (9);
+           
+                case 2:
+                    if (random <= 0.05)
+                    {
+                        return (3);
+                    }
+                    else if (random <= 0.2)
+                    {
+                        return (4);
+                    }
+                    else if (random <= 0.6)
+                    {
+                        return (5);
+                    }
+                    else if (random <= 0.85)
+                    {
+                        return (6);
+                    }
+                    else return (7);
+                default:
+                    Console.WriteLine("Dia incorrecto");
+                    return (0);
+            }
+
+
+        }
+
+
+        //Simulador Principal
+      
 
     }
 
