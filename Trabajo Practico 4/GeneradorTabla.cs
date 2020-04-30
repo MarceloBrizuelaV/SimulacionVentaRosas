@@ -16,7 +16,7 @@ namespace Trabajo_Practico_4
         {
             if (bandera == 1)
             {
-                double[] valoresDemanda = { 0.31, 0.87, 0.78, 0.97, 0.38, 0.63, 0.35, 0.83, 0.31, 0.14, 0.44, 0.68, 0.25, 0.06, 0.22, 0.77, 0.1, 0.29 };
+                double[] valoresDemanda = { 0.31, 0.87, 0.78, 0.97, 0.38, 0.63, 0.35, 0.83, 0.31, 0.14, 0.44, 0.68, 0.24, 0.06, 0.22, 0.9, 0.27 ,0.77, 0.1, 0.29 };
                 return valoresDemanda;
             }
             else
