@@ -1,0 +1,10 @@
+F:\Datos\Facultad\Repositorio\tp4Sim\Trabajo Practico 4\bin\Debug\Trabajo Practico 4.exe.config
+F:\Datos\Facultad\Repositorio\tp4Sim\Trabajo Practico 4\bin\Debug\Trabajo Practico 4.exe
+F:\Datos\Facultad\Repositorio\tp4Sim\Trabajo Practico 4\bin\Debug\Trabajo Practico 4.pdb
+F:\Datos\Facultad\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo Practico 4.csprojAssemblyReference.cache
+F:\Datos\Facultad\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo_Practico_4.Form1.resources
+F:\Datos\Facultad\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo_Practico_4.Properties.Resources.resources
+F:\Datos\Facultad\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo Practico 4.csproj.GenerateResource.cache
+F:\Datos\Facultad\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo Practico 4.csproj.CoreCompileInputs.cache
+F:\Datos\Facultad\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo Practico 4.exe
+F:\Datos\Facultad\Repositorio\tp4Sim\Trabajo Practico 4\obj\Debug\Trabajo Practico 4.pdb
