@@ -22,7 +22,7 @@ namespace Trabajo_Practico_4
             GeneradorTabla generador = new GeneradorTabla();
             Solucion1 calc = new Solucion1();
             Herramientas h = new Herramientas();
-            double [,] tabla = generador.tablaBase(Convert.ToInt32(txtCantidadDia.Text),1);
+            double[,] tabla = generador.tablaBase(Convert.ToInt32(txtCantidadDia.Text), 1);
 
 
             for (int i = 0; i < tabla.GetLength(0); i++)
@@ -38,7 +38,7 @@ namespace Trabajo_Practico_4
             txtPromedioGanancia.Text = Convert.ToString(calc.calcularPromedio(ganancias));
 
             h.arrayAGrid(ganancias, Ganancias, 4);
-            
+
 
         }
     }
