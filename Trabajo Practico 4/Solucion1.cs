@@ -33,14 +33,14 @@ namespace Trabajo_Practico_4
                 gananciaAcumulada += columna[i];
             }
 
-            columna[columna.Length] = gananciaAcumulada;
+            columna[columna.Length - 1] = gananciaAcumulada;
             return columna;
         }
 
 
         public double calcularPromedio(double[] col) 
         {
-            return col[col.Length - 1] / col.Length - 1;
+            return col[col.Length - 1] / Convert.ToDouble(col.Length - 1);
         }
 
     }

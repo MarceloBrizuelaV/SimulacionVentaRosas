@@ -41,18 +41,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txtReserva = new System.Windows.Forms.TextBox();
+            this.Ganancias = new System.Windows.Forms.DataGridView();
+            this.gananciaDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPromedioGanancia = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataTablaBase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ganancias)).BeginInit();
             this.SuspendLayout();
             // 
             // dataTablaBase
             // 
-
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(586, 236);
-            this.dataGridView1.TabIndex = 0;
-
             this.dataTablaBase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataTablaBase.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -61,9 +60,8 @@
             this.Column4});
             this.dataTablaBase.Location = new System.Drawing.Point(38, 35);
             this.dataTablaBase.Name = "dataTablaBase";
-            this.dataTablaBase.Size = new System.Drawing.Size(675, 236);
+            this.dataTablaBase.Size = new System.Drawing.Size(449, 236);
             this.dataTablaBase.TabIndex = 0;
-
             // 
             // Column1
             // 
@@ -153,11 +151,53 @@
             this.txtReserva.Size = new System.Drawing.Size(100, 20);
             this.txtReserva.TabIndex = 9;
             // 
+            // Ganancias
+            // 
+            this.Ganancias.AllowUserToAddRows = false;
+            this.Ganancias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Ganancias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gananciaDia,
+            this.Column5});
+            this.Ganancias.Location = new System.Drawing.Point(506, 35);
+            this.Ganancias.Name = "Ganancias";
+            this.Ganancias.Size = new System.Drawing.Size(246, 236);
+            this.Ganancias.TabIndex = 10;
+            // 
+            // gananciaDia
+            // 
+            this.gananciaDia.HeaderText = "Ganancia Dia";
+            this.gananciaDia.Name = "gananciaDia";
+            // 
+            // txtPromedioGanancia
+            // 
+            this.txtPromedioGanancia.Enabled = false;
+            this.txtPromedioGanancia.Location = new System.Drawing.Point(506, 330);
+            this.txtPromedioGanancia.Name = "txtPromedioGanancia";
+            this.txtPromedioGanancia.Size = new System.Drawing.Size(100, 20);
+            this.txtPromedioGanancia.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(506, 313);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Ganancia Promedio";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtPromedioGanancia);
+            this.Controls.Add(this.Ganancias);
             this.Controls.Add(this.txtReserva);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -170,6 +210,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataTablaBase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ganancias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,6 +231,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.TextBox txtReserva;
+        private object dataGridView1;
+        private System.Windows.Forms.DataGridView Ganancias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gananciaDia;
+        private System.Windows.Forms.TextBox txtPromedioGanancia;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
 

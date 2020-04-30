@@ -20,7 +20,10 @@ namespace Trabajo_Practico_4
         private void button1_Click(object sender, EventArgs e)
         {
             GeneradorTabla generador = new GeneradorTabla();
+            Solucion1 calc = new Solucion1();
+            Herramientas h = new Herramientas();
             double [,] tabla = generador.tablaBase(Convert.ToInt32(txtCantidadDia.Text),1);
+
 
             for (int i = 0; i < tabla.GetLength(0); i++)
             {
@@ -30,6 +33,13 @@ namespace Trabajo_Practico_4
                 dataTablaBase.Rows[i].Cells[2].Value = tabla[i, 2].ToString();
                 dataTablaBase.Rows[i].Cells[3].Value = tabla[i, 3].ToString();
             }
+
+            double[] ganancias = calc.calcular(tabla, Convert.ToInt32(txtReserva.Text));
+            txtPromedioGanancia.Text = Convert.ToString(calc.calcularPromedio(ganancias));
+
+            h.arrayAGrid(ganancias, Ganancias, 4);
+            
+
         }
     }
 }
