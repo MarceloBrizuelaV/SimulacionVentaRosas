@@ -37,7 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSimulaciones = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbDiaAnterior = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txtReserva = new System.Windows.Forms.TextBox();
@@ -124,15 +124,15 @@
             this.txtSimulaciones.Size = new System.Drawing.Size(127, 20);
             this.txtSimulaciones.TabIndex = 5;
             // 
-            // checkBox1
+            // cbDiaAnterior
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(122, 356);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(81, 17);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Dia Anterior";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbDiaAnterior.AutoSize = true;
+            this.cbDiaAnterior.Location = new System.Drawing.Point(122, 356);
+            this.cbDiaAnterior.Name = "cbDiaAnterior";
+            this.cbDiaAnterior.Size = new System.Drawing.Size(81, 17);
+            this.cbDiaAnterior.TabIndex = 6;
+            this.cbDiaAnterior.Text = "Dia Anterior";
+            this.cbDiaAnterior.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -213,7 +213,7 @@
             this.Controls.Add(this.txtReserva);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbDiaAnterior);
             this.Controls.Add(this.txtSimulaciones);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -235,7 +235,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSimulaciones;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbDiaAnterior;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

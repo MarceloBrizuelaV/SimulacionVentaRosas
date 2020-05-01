@@ -39,7 +39,7 @@ namespace Trabajo_Practico_4
                 dataTablaBase.Rows[i].Cells[3].Value = tabla[i, 3].ToString();
             }
 
-            double[] ganancias = calc.calcular(tabla, Convert.ToInt32(txtReserva.Text));
+            double[] ganancias = calc.calcular(tabla, Convert.ToInt32(txtReserva.Text), cbDiaAnterior.Checked);
             txtPromedioGanancia.Text = Convert.ToString(calc.calcularPromedio(ganancias));
 
             h.arrayAGrid(ganancias, Ganancias, 4);

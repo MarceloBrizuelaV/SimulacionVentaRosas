@@ -10,32 +10,60 @@ namespace Trabajo_Practico_4
     {
 
 
-        public double[] calcular(double[,] matriz, int cantReservada)
+        public double[] calcular(double[,] matriz, int cantReservada, Boolean anterior)
         {
             double[] columna = new double[matriz.GetLength(0) + 1];
-            double costo = cantReservada * 8;
+            
             double gananciaAcumulada = 0;
-
-
-            for (int i = 0; i < matriz.GetLength(0); i++)
+            if (anterior)
             {
-                double demanda = matriz[i, matriz.GetLength(1) - 2];
-                double venta = matriz[i, matriz.GetLength(1) - 1];
-                if (demanda < cantReservada)
+                for (int i = 0; i < matriz.GetLength(0); i++)
                 {
-                    columna[i] = (venta + (cantReservada - demanda) * 1.2) - costo;
-                }
-                else
-                {
-                    columna[i] = (venta - (demanda - cantReservada) * 12) - costo;
-                }
+                    double costo = cantReservada * 8;
+                    double demanda = matriz[i, matriz.GetLength(1) - 2];
+                    double venta = matriz[i, matriz.GetLength(1) - 1];
+                    if (demanda < cantReservada)
+                    {
+                        columna[i] = (venta + (cantReservada - demanda) * 1.2) - costo;
+                    }
+                    else
+                    {
+                        columna[i] = (venta - (demanda - cantReservada) * 12) - costo;
+                    }
 
-                gananciaAcumulada += columna[i];
+                    cantReservada = Convert.ToInt32(demanda);
+                    gananciaAcumulada += columna[i];
+                    
+                }
             }
+            else
+            {
+                double costo = cantReservada * 8;
+                for (int i = 0; i < matriz.GetLength(0); i++)
+                {
+                    double demanda = matriz[i, matriz.GetLength(1) - 2];
+                    double venta = matriz[i, matriz.GetLength(1) - 1];
+                    if (demanda < cantReservada)
+                    {
+                        columna[i] = (venta + (cantReservada - demanda) * 1.2) - costo;
+                    }
+                    else
+                    {
+                        columna[i] = (venta - (demanda - cantReservada) * 12) - costo;
+                    }
 
+                    gananciaAcumulada += columna[i];
+                }
+            }
             columna[columna.Length - 1] = gananciaAcumulada;
             return columna;
         }
+
+        
+
+
+
+
 
 
         public double calcularPromedio(double[] col)
@@ -43,6 +71,14 @@ namespace Trabajo_Practico_4
             return col[col.Length - 1] / Convert.ToDouble(col.Length - 1);
         }
         //HOLA
+
+
+
+
+
+
+
+
 
     }
 }
