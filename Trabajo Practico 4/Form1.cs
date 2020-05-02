@@ -25,7 +25,7 @@ namespace Trabajo_Practico_4
             GeneradorTabla generador = new GeneradorTabla();
             Solucion1 calc = new Solucion1();
             Herramientas h = new Herramientas();
-            double[,] tabla = generador.tablaBase(Convert.ToInt32(txtCantidadDia.Text), 1);
+            double[,] tabla = generador.tablaBase(Convert.ToInt32(txtCantidadDia.Text), false);
 
             
 

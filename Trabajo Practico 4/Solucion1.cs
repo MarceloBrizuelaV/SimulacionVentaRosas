@@ -8,8 +8,7 @@ namespace Trabajo_Practico_4
 {
     class Solucion1
     {
-
-
+        //Funcion del calculo de la ganancia por dia
         public double[] calcular(double[,] matriz, int cantReservada, double precioVenta, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeComprar)
         {
             double[] columna = new double[matriz.GetLength(0) + 1];
@@ -113,17 +112,11 @@ namespace Trabajo_Practico_4
         }
 
         
-
-
-
-
-
-
+        //Calculo del promedio a partir de un array (el ultimo dato del mismo tiene que tener la sumatoria)
         public double calcularPromedio(double[] col)
         {
             return col[col.Length - 1] / Convert.ToDouble(col.Length - 1);
         }
-        //HOLA
 
 
 

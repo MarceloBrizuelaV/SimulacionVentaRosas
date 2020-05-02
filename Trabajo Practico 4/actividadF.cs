@@ -8,14 +8,14 @@ namespace Trabajo_Practico_4
 {
     class actividadF
     {
-        public double[] puntoA(int cantidad, int reserva, Boolean check)
+        public double[] puntoA(int cantidad, int reserva, double precioVenta, double precioCompra, double precioCompraFaltante, double perdidaPorFaltante, Boolean diaAnterior, Boolean puedeComprar)
         
         {
             GeneradorTabla tabla = new GeneradorTabla();
 
             //Busco la matriz original.
             double[,] matriz = new double[cantidad,4];
-            matriz = tabla.tablaBase(cantidad, 1);
+            matriz = tabla.tablaBase(cantidad, true);
 
             double perdida = 1.20;
             
@@ -23,7 +23,7 @@ namespace Trabajo_Practico_4
             //Realizo una matriz con los datos de ganancia y los dias.
             double[] minimatriz = new double[cantidad + 1];
 
-            if (check)
+            if (diaAnterior)
             {
 
                 for (int i = 0; i < cantidad; i++)
