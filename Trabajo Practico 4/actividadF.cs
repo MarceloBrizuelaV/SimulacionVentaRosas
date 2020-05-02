@@ -15,7 +15,7 @@ namespace Trabajo_Practico_4
 
             //Busco la matriz original.
             double[,] matriz = new double[cantidad,4];
-            matriz = tabla.tablaBase(cantidad, true);
+            matriz = tabla.tablaBase(cantidad, true, 12);
 
             double perdida = 1.20;
             

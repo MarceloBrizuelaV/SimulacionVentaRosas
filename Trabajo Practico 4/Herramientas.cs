@@ -21,6 +21,7 @@ namespace Trabajo_Practico_4
             return (Math.Truncate(valor * factor)) / factor;
         }
 
+        //Funcion estetica para mostrar el tipo de dia por String en vez de un int
         public void setearTipoDia(DataGridView dataGridView, int numColumna)
         {
             numColumna -= 1;
@@ -65,7 +66,7 @@ namespace Trabajo_Practico_4
 
         }
 
-        //Esta funcion agrega datos al DataGrid
+        //Esta funcion agrega datos al DataGrid desde un array
         public void arrayAGrid(double[] array, System.Windows.Forms.DataGridView dataGrid, int ordenTruncado)
         {
             for (int i = 0; i < array.Length; i++)
@@ -76,7 +77,30 @@ namespace Trabajo_Practico_4
             }
         }
 
+        //Funcion que permite agregar un array en la ultima columna de un datagrid cuando tiene informacion
+        public void agregarColumnaGrid(double[] lista, DataGridView dataGridView, String nombreColumna)
+        {
+            dataGridView.Columns.Add(nombreColumna, nombreColumna);
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            {
+                dataGridView.Rows[i].Cells[nombreColumna].Value = TruncadoMarcelo(lista[i], 4);
+            }
+        }
+
         //Esta funcion limpia los textbox
+        public static void Limpiar(GroupBox gb)
+        {
+            // Checar todos los textbox del formulario
+            foreach (Control oControls in gb.Controls)
+            {
+                if (oControls is TextBox)
+                {
+                    oControls.Text = "0";
+                }
+
+            }
+        }
+
         public static void Limpiar(Form ofrm)
         {
             // Checar todos los textbox del formulario
@@ -87,6 +111,35 @@ namespace Trabajo_Practico_4
                     oControls.Text = ""; // Eliminar el texto del TextBox
                 }
 
+            }
+        }
+
+        public void valoresInexistentes(Form form, GroupBox gb)
+        {
+            foreach (Control oControls in form.Controls)
+            {
+                if (oControls is TextBox && oControls.Text == "")
+                {
+                    oControls.Text = "0";
+                }
+
+            }
+            foreach (Control oControls in gb.Controls)
+            {
+                if (oControls.Text == "")
+                {
+                    oControls.Text = "0";
+                }
+
+            }
+        }
+
+        public void volverMatrizOrigen(DataGridView dataGridView)
+        {
+            if (dataGridView.Rows.Count != 0)
+            {
+                dataGridView.Rows.Clear();
+                dataGridView.Columns.RemoveAt(dataGridView.Columns.Count - 1);
             }
         }
 

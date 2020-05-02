@@ -14,7 +14,7 @@ namespace Trabajo_Practico_4
 
         public double[] generadorRandomDemanda(int cantidad, Boolean valoresFijos)
         {
-            if (!valoresFijos)
+            if (valoresFijos)
             {
                 double[] valoresDemanda = { 0.31, 0.87, 0.78, 0.97, 0.38, 0.63, 0.35, 0.83, 0.31, 0.14, 0.44, 0.68, 0.24, 0.06, 0.22, 0.9, 0.27 ,0.77, 0.1, 0.29 };
                 return valoresDemanda;
@@ -38,7 +38,7 @@ namespace Trabajo_Practico_4
         {
             
 
-            if (!valoresFijos)
+            if (valoresFijos)
             {
                 double[] valoresClima = { 0.72,0.33,0.39,0.86,0.85,0.37,0.3,0.48,0.31,0.97,0.4,0.91,0.73,0.33,0.53,0.55,0.59,0.01,0.57,0.8 };
 
@@ -119,7 +119,7 @@ namespace Trabajo_Practico_4
         }
 
 
-        public double[,] tablaBase(int cantidad, Boolean valoresFijos) 
+        public double[,] tablaBase(int cantidad, Boolean valoresFijos, double precioVenta) 
         {
             double[] demanda = generadorRandomDemanda(cantidad, valoresFijos);
             double[] clima = generadorRandomClima(cantidad, valoresFijos);
@@ -130,7 +130,7 @@ namespace Trabajo_Practico_4
             for (int i = 0; i < cantidad; i++)
             {
                 //Cuento las iteraciones
-                matrizBase[i, 0] = i;
+                matrizBase[i, 0] = i + 1;
 
                 //Obtengo el clima
                 int climaFinal = getClima(clima[i]);
@@ -141,11 +141,16 @@ namespace Trabajo_Practico_4
                 matrizBase[i, 2] = Convert.ToDouble(demandaFinal);
 
                 //Calculo el precio
-                double precio = demandaFinal * 12;
+                double precio = demandaFinal * precioVenta;
                 matrizBase[i, 3] = precio;
             }
 
             return matrizBase;
+        }
+
+        public double[,] tablaBase()
+        {
+            return tablaBase(20, true, 12);
         }
 
     }
