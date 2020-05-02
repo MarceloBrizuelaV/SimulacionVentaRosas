@@ -21,6 +21,25 @@ namespace Trabajo_Practico_4
             return (Math.Truncate(valor * factor)) / factor;
         }
 
+        public void setearTipoDia(DataGridView dataGridView, int numColumna)
+        {
+            numColumna -= 1;
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            {
+                switch (dataGridView.Rows[i].Cells[numColumna].Value)
+                {
+                    case "1":
+                        dataGridView.Rows[i].Cells[numColumna].Value = "Soleado";
+                        break;
+                    case "2":
+                        dataGridView.Rows[i].Cells[numColumna].Value = "Nublado";
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
         //Esta funcion agrega los datos al datagrid
         public void matrizAGrid(double[,] matriz, System.Windows.Forms.DataGridView dataGridView, int ordenTruncado)
         {

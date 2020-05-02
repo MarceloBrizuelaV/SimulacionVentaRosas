@@ -60,6 +60,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbNumerosAleatorios = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataTablaBase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ganancias)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -365,11 +366,22 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // cbNumerosAleatorios
+            // 
+            this.cbNumerosAleatorios.AutoSize = true;
+            this.cbNumerosAleatorios.Location = new System.Drawing.Point(92, 244);
+            this.cbNumerosAleatorios.Name = "cbNumerosAleatorios";
+            this.cbNumerosAleatorios.Size = new System.Drawing.Size(117, 17);
+            this.cbNumerosAleatorios.TabIndex = 27;
+            this.cbNumerosAleatorios.Text = "Numeros Aleatorios";
+            this.cbNumerosAleatorios.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(867, 622);
+            this.Controls.Add(this.cbNumerosAleatorios);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cbVariables);
             this.Controls.Add(this.cbPuedeComprar);
@@ -431,6 +443,7 @@
         private System.Windows.Forms.TextBox txtPrecioVentaCementerio;
         private System.Windows.Forms.TextBox txtPerdidaPorFaltante;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox cbNumerosAleatorios;
     }
 }
 

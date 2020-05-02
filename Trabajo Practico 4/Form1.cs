@@ -25,7 +25,7 @@ namespace Trabajo_Practico_4
             GeneradorTabla generador = new GeneradorTabla();
             Solucion1 calc = new Solucion1();
             Herramientas h = new Herramientas();
-            double[,] tabla = generador.tablaBase(Convert.ToInt32(txtCantidadDia.Text), false);
+            double[,] tabla = generador.tablaBase(Convert.ToInt32(txtCantidadDia.Text), cbNumerosAleatorios.Checked);
 
             
 
@@ -37,6 +37,8 @@ namespace Trabajo_Practico_4
                 dataTablaBase.Rows[i].Cells[2].Value = tabla[i, 2].ToString();
                 dataTablaBase.Rows[i].Cells[3].Value = tabla[i, 3].ToString();
             }
+            h.setearTipoDia(dataTablaBase, 2);
+
 
             double[] ganancias = calc.calcular(tabla, Convert.ToInt32(txtReserva.Text), 12, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked);
             txtPromedioGanancia.Text = Convert.ToString(calc.calcularPromedio(ganancias));
@@ -54,7 +56,8 @@ namespace Trabajo_Practico_4
             Herramientas h = new Herramientas();
             actividadF generar = new actividadF();
 
-            double[] tabla = generar.puntoA(Convert.ToInt32(txtCantidadDia.Text), Convert.ToInt32(txtReserva.Text), cbDiaAnterior.Checked);
+
+            double[] tabla = generar.puntoA(Convert.ToInt32(txtCantidadDia.Text), Convert.ToInt32(txtReserva.Text), 12, 8, 11, 1.2, cbDiaAnterior.Checked, cbPuedeComprar.Checked);
 
             txtPromedioGanancia.Text = Convert.ToString(calc.calcularPromedio(tabla));
 
