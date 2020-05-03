@@ -43,22 +43,34 @@ namespace Trabajo_Practico_4
                 ganancias = calc.calcular(tabla, cantReservada, 12, 1.2, 8, 11, diaAnterior, puedeComprar);
             }
             String ganancia = Convert.ToString(calc.calcularPromedio(ganancias));
-
+            
+            /*
             if (cantidadSimulaciones != 1)
             {
-                dataGridView.Rows.Add(2);
+                //dataGridView.Rows.Add(2);
+                //h.volverMatrizOrigen(dataGridView);
+                h.agregarColumnaGrid(ganancias, dataGridView, "Ganancias");
+                h.concatenarDataGrid(dataGridView, tabla, ganancias);
+                //h.matrizAGrid(tabla, dataGridView, 2);
+                h.setearTipoDia(dataGridView, 2);
+                
+
+            }
+            else
+            {
                 h.volverMatrizOrigen(dataGridView);
                 h.matrizAGrid(tabla, dataGridView, 2);
                 h.setearTipoDia(dataGridView, 2);
                 h.agregarColumnaGrid(ganancias, dataGridView, "Ganancias");
-
             }
+            */
 
 
             h.volverMatrizOrigen(dataGridView);
             h.matrizAGrid(tabla, dataGridView, 2);
             h.setearTipoDia(dataGridView, 2);
             h.agregarColumnaGrid(ganancias, dataGridView, "Ganancias");
+
 
             return ganancia;
         }

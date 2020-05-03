@@ -82,6 +82,7 @@
             this.dataTablaBase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataTablaBase.Size = new System.Drawing.Size(500, 308);
             this.dataTablaBase.TabIndex = 0;
+
             // 
             // Column1
             // 

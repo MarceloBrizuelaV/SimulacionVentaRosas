@@ -87,6 +87,29 @@ namespace Trabajo_Practico_4
             }
         }
 
+
+        //Necesito una funcion que me agregue la columna al grid teniendo en cuenta que el datagrid tiene mas filas que las de la columna
+        public void concatenarDataGrid(DataGridView dataGridView, double[,] matriz, double[] ganancias)
+        {
+            dataGridView.Rows.Add(2);
+            int puntoInicio = dataGridView.Rows.Count + 1;
+
+            double[,] nuevaMatriz = new double[matriz.GetLength(0), matriz.GetLength(1) + 1];
+
+            for (int i = 0; i < matriz.GetLength(0); i++)
+            {
+                for (int j = 0; j < matriz.GetLength(1); j++)
+                {
+                    nuevaMatriz[i,j] = matriz[i,j];
+                }
+                nuevaMatriz[i, matriz.GetLength(1)] = ganancias[i];
+
+            }
+            matrizAGrid(nuevaMatriz, dataGridView, 4);
+        }
+
+
+
         //Esta funcion limpia los textbox
         public static void Limpiar(GroupBox gb)
         {

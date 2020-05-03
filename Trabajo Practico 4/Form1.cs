@@ -25,9 +25,13 @@ namespace Trabajo_Practico_4
             String g="";
 
             h.valoresInexistentes(this, gbVariables);
-            //g = calc.primeraSolucion(dataTablaBase, Convert.ToInt32(txtSimulaciones.Text), Convert.ToInt32(txtCantidadDia.Text), Convert.ToInt32(txtReserva.Text),
-            //    Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text),
-            //    cbDiaAnterior.Checked, cbPuedeComprar.Checked, cbNumerosAleatorios.Checked, cbVariables.Checked);
+            
+            /*
+            g = calc.primeraSolucion(dataTablaBase, Convert.ToInt32(txtSimulaciones.Text), Convert.ToInt32(txtCantidadDia.Text), Convert.ToInt32(txtReserva.Text),
+                Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text),
+                cbDiaAnterior.Checked, cbPuedeComprar.Checked, cbNumerosAleatorios.Checked, cbVariables.Checked);
+
+            */
 
             
             for (int i = 0; i <= Convert.ToInt32(txtSimulaciones.Text); i++)
@@ -35,7 +39,12 @@ namespace Trabajo_Practico_4
                 g = calc.primeraSolucion(dataTablaBase, Convert.ToInt32(txtSimulaciones.Text), Convert.ToInt32(txtCantidadDia.Text), Convert.ToInt32(txtReserva.Text),
                 Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text),
                 cbDiaAnterior.Checked, cbPuedeComprar.Checked, cbNumerosAleatorios.Checked, cbVariables.Checked);
+
+                
             }
+            
+
+
             txtPromedioGanancia.Text = g;
             /*
             GeneradorTabla generador = new GeneradorTabla();
@@ -127,6 +136,10 @@ namespace Trabajo_Practico_4
             txtCantidadDia.Enabled = cbNumerosAleatorios.Checked;
             txtCantidadDia.Text = "0";
         }
+
+
+
+
 
 
     }
