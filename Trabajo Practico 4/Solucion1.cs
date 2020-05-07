@@ -164,6 +164,7 @@ namespace Trabajo_Practico_4
         }
 
 
+        //Calcular promedio a partir de un array y lo remplaza en la ultima fila
         public void calcularPromedioMod(double [] col)
         {
             col[col.Length - 1] = col[col.Length - 1] / Convert.ToDouble(col.Length - 1);

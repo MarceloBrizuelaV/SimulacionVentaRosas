@@ -19,10 +19,13 @@ namespace Trabajo_Practico_4
 
         private void button1_Click(object sender, EventArgs e)
         {
+            dataTablaBase.Rows.Clear();
+            
             Solucion1 calc = new Solucion1();
             Herramientas h = new Herramientas();
 
             double [,] matriz;
+            double acumuladoGananciaSimulaciones = 0;
 
             h.valoresInexistentes(this, gbVariables);
                         
@@ -32,26 +35,40 @@ namespace Trabajo_Practico_4
                 Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text),
                 cbDiaAnterior.Checked, cbPuedeComprar.Checked, cbNumerosAleatorios.Checked, cbVariables.Checked);
 
+                acumuladoGananciaSimulaciones += matriz[matriz.GetLength(0) - 1, matriz.GetLength(1) - 1];
+
                 h.matrizAGrid(matriz, dataTablaBase, 2);
                 h.setearTipoDia(dataTablaBase, 2);
                 dataTablaBase.Rows.Add();
             }
+
+            txtPromedioGanancia.Text = (acumuladoGananciaSimulaciones / Convert.ToDouble(txtSimulaciones.Text)).ToString();
         }
 
         private void btnF_Click(object sender, EventArgs e)
         {
-            //Prueba
+            dataTablaBase.Rows.Clear();
+
             Solucion1 calc = new Solucion1();
             Herramientas h = new Herramientas();
             actividadF generar = new actividadF();
 
+            double[,] matriz;
+            double acumuladoGananciaSimulaciones = 0;
 
-            double[] tabla = generar.puntoA(Convert.ToInt32(txtCantidadDia.Text), Convert.ToInt32(txtReserva.Text), 12, 8, 11, 1.2, cbDiaAnterior.Checked, cbPuedeComprar.Checked);
+            h.valoresInexistentes(this, gbVariables);
 
-            txtPromedioGanancia.Text = Convert.ToString(calc.calcularPromedio(tabla));
+            for (int i = 0; i < Convert.ToInt32(txtSimulaciones.Text); i++)
+            {
+                matriz = generar.segundaSolucion(Convert.ToInt32(txtCantidadDia.Text), Convert.ToInt32(txtReserva.Text), 12, cbDiaAnterior.Checked, cbNumerosAleatorios.Checked);
 
-            h.agregarColumnaGrid(tabla, dataTablaBase, "Ganancias");
+                acumuladoGananciaSimulaciones += matriz[matriz.GetLength(0) - 1, matriz.GetLength(1) - 1];
 
+                h.matrizAGrid(matriz, dataTablaBase, 2);
+                h.setearTipoDia(dataTablaBase, 2);
+                dataTablaBase.Rows.Add();
+            }
+            txtPromedioGanancia.Text = (acumuladoGananciaSimulaciones / Convert.ToDouble(txtSimulaciones.Text)).ToString();
         }
 
         private void cbVariables_CheckedChanged(object sender, EventArgs e)
@@ -66,7 +83,6 @@ namespace Trabajo_Practico_4
             {
                 this.Height = 524;
             }
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -87,11 +103,5 @@ namespace Trabajo_Practico_4
             txtCantidadDia.Enabled = cbNumerosAleatorios.Checked;
             txtCantidadDia.Text = "0";
         }
-
-
-
-
-
-
     }
 }
