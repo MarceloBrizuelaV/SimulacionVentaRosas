@@ -22,71 +22,22 @@ namespace Trabajo_Practico_4
             Solucion1 calc = new Solucion1();
             Herramientas h = new Herramientas();
 
-            String g="";
+            double [,] matriz;
 
             h.valoresInexistentes(this, gbVariables);
-            
-            /*
-            g = calc.primeraSolucion(dataTablaBase, Convert.ToInt32(txtSimulaciones.Text), Convert.ToInt32(txtCantidadDia.Text), Convert.ToInt32(txtReserva.Text),
+                        
+            for (int i = 0; i < Convert.ToInt32(txtSimulaciones.Text); i++)
+            {
+                matriz = calc.primeraSolucion(dataTablaBase, Convert.ToInt32(txtSimulaciones.Text), Convert.ToInt32(txtCantidadDia.Text), Convert.ToInt32(txtReserva.Text),
                 Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text),
                 cbDiaAnterior.Checked, cbPuedeComprar.Checked, cbNumerosAleatorios.Checked, cbVariables.Checked);
 
-            */
-
-            
-            for (int i = 0; i <= Convert.ToInt32(txtSimulaciones.Text); i++)
-            {
-                g = calc.primeraSolucion(dataTablaBase, Convert.ToInt32(txtSimulaciones.Text), Convert.ToInt32(txtCantidadDia.Text), Convert.ToInt32(txtReserva.Text),
-                Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text),
-                cbDiaAnterior.Checked, cbPuedeComprar.Checked, cbNumerosAleatorios.Checked, cbVariables.Checked);
-
-                
+                h.matrizAGrid(matriz, dataTablaBase, 2);
+                h.setearTipoDia(dataTablaBase, 2);
+                dataTablaBase.Rows.Add();
             }
-            
-
-
-            txtPromedioGanancia.Text = g;
-            /*
-            GeneradorTabla generador = new GeneradorTabla();
-            Solucion1 calc = new Solucion1();
-            Herramientas h = new Herramientas();
-            double[,] tabla;
-            double[] ganancias;
-
-
-            if (cbVariables.Checked)
-            {
-                if (cbNumerosAleatorios.Checked)
-                {
-                    tabla = generador.tablaBase(Convert.ToInt32(txtCantidadDia.Text), !cbNumerosAleatorios.Checked, Convert.ToDouble(txtPrecioVenta.Text));
-                }
-                else
-                {
-                    tabla = generador.tablaBase(20, true, Convert.ToDouble(txtPrecioVenta.Text));
-                }
-                ganancias = calc.calcular(tabla, Convert.ToInt32(txtReserva.Text), Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), 
-                                            Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text), cbDiaAnterior.Checked, cbPuedeComprar.Checked);
-            }
-            else
-            {
-                if (cbNumerosAleatorios.Checked)
-                {
-                    tabla = generador.tablaBase(Convert.ToInt32(txtCantidadDia.Text), !cbNumerosAleatorios.Checked, 12);
-                }
-                else
-                {
-                    tabla = generador.tablaBase(20, true, 12);
-                }
-                ganancias = calc.calcular(tabla, Convert.ToInt32(txtReserva.Text), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked);
-            }
-            txtPromedioGanancia.Text = Convert.ToString(calc.calcularPromedio(ganancias));
-
-            h.volverMatrizOrigen(dataTablaBase);
-            h.matrizAGrid(tabla, dataTablaBase, 2);
-            h.setearTipoDia(dataTablaBase, 2);
-            h.agregarColumnaGrid(ganancias, dataTablaBase, "Ganancias");*/
         }
-        
+
         private void btnF_Click(object sender, EventArgs e)
         {
             //Prueba

@@ -9,7 +9,7 @@ namespace Trabajo_Practico_4
 {
     class Solucion1
     {
-        public String primeraSolucion(DataGridView dataGridView, int cantidadSimulaciones, int cantidadDias, int cantReservada, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeComprar, Boolean Aleatorio, Boolean cambiarVariables)
+        public double[,] primeraSolucion(DataGridView dataGridView, int cantidadSimulaciones, int cantidadDias, int cantReservada, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeComprar, Boolean Aleatorio, Boolean cambiarVariables)
         {
             GeneradorTabla generador = new GeneradorTabla();
             Solucion1 calc = new Solucion1();
@@ -42,37 +42,15 @@ namespace Trabajo_Practico_4
                 }
                 ganancias = calc.calcular(tabla, cantReservada, 12, 1.2, 8, 11, diaAnterior, puedeComprar);
             }
-            String ganancia = Convert.ToString(calc.calcularPromedio(ganancias));
+
+
+            calc.calcularPromedioMod(ganancias);
+
+
+            double [,] matriz = h.concatenarMatriz(tabla, ganancias);
+            return matriz;
+
             
-            /*
-            if (cantidadSimulaciones != 1)
-            {
-                //dataGridView.Rows.Add(2);
-                //h.volverMatrizOrigen(dataGridView);
-                h.agregarColumnaGrid(ganancias, dataGridView, "Ganancias");
-                h.concatenarDataGrid(dataGridView, tabla, ganancias);
-                //h.matrizAGrid(tabla, dataGridView, 2);
-                h.setearTipoDia(dataGridView, 2);
-                
-
-            }
-            else
-            {
-                h.volverMatrizOrigen(dataGridView);
-                h.matrizAGrid(tabla, dataGridView, 2);
-                h.setearTipoDia(dataGridView, 2);
-                h.agregarColumnaGrid(ganancias, dataGridView, "Ganancias");
-            }
-            */
-
-
-            h.volverMatrizOrigen(dataGridView);
-            h.matrizAGrid(tabla, dataGridView, 2);
-            h.setearTipoDia(dataGridView, 2);
-            h.agregarColumnaGrid(ganancias, dataGridView, "Ganancias");
-
-
-            return ganancia;
         }
 
         //Funcion del calculo de la ganancia por dia
@@ -186,12 +164,9 @@ namespace Trabajo_Practico_4
         }
 
 
-
-
-
-
-
-
-
+        public void calcularPromedioMod(double [] col)
+        {
+            col[col.Length - 1] = col[col.Length - 1] / Convert.ToDouble(col.Length - 1);
+        }
     }
 }

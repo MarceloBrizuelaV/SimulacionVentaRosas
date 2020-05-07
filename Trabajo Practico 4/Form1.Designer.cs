@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dataTablaBase = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCantidadDia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,6 +54,11 @@
             this.txtPerdidaPorFaltante = new System.Windows.Forms.TextBox();
             this.gbVariables = new System.Windows.Forms.GroupBox();
             this.cbNumerosAleatorios = new System.Windows.Forms.CheckBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ganancias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataTablaBase)).BeginInit();
             this.gbVariables.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +74,8 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.ganancias});
             this.dataTablaBase.Location = new System.Drawing.Point(12, 12);
             this.dataTablaBase.Name = "dataTablaBase";
             this.dataTablaBase.ReadOnly = true;
@@ -82,35 +84,6 @@
             this.dataTablaBase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataTablaBase.Size = new System.Drawing.Size(500, 308);
             this.dataTablaBase.TabIndex = 0;
-
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Dia";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Clima";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Demanda";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Venta";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // txtCantidadDia
             // 
@@ -352,6 +325,40 @@
             this.cbNumerosAleatorios.UseVisualStyleBackColor = true;
             this.cbNumerosAleatorios.CheckedChanged += new System.EventHandler(this.cbNumerosAleatorios_CheckedChanged);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Dia";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Clima";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Demanda";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Venta";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // ganancias
+            // 
+            this.ganancias.HeaderText = "Ganancias";
+            this.ganancias.Name = "ganancias";
+            this.ganancias.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,10 +406,6 @@
         private System.Windows.Forms.Button btnF;
         private System.Windows.Forms.CheckBox cbPuedeComprar;
         private System.Windows.Forms.DataGridView dataTablaBase;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.CheckBox cbVariables;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -416,6 +419,11 @@
         private System.Windows.Forms.TextBox txtPerdidaPorFaltante;
         private System.Windows.Forms.GroupBox gbVariables;
         private System.Windows.Forms.CheckBox cbNumerosAleatorios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ganancias;
     }
 }
 

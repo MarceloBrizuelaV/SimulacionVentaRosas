@@ -57,11 +57,17 @@ namespace Trabajo_Practico_4
             }
             else
             {
-                dataGridView.Rows.Add();
-                for (int i = 0; i < matriz.GetLength(1); i++)
+                
+                for (int j = 0; j < matriz.GetLength(0); j++)
                 {
-                    dataGridView.Rows[dataGridView.Rows.Count - 1].Cells[i].Value = TruncadoMarcelo(matriz[0, i], ordenTruncado).ToString();
+                    dataGridView.Rows.Add();
+
+                    for (int i = 0; i < matriz.GetLength(1); i++)
+                    {
+                        dataGridView.Rows[dataGridView.Rows.Count - 1].Cells[i].Value = TruncadoMarcelo(matriz[j, i], ordenTruncado).ToString();
+                    }
                 }
+
             }
 
         }
@@ -85,6 +91,27 @@ namespace Trabajo_Practico_4
             {
                 dataGridView.Rows[i].Cells[nombreColumna].Value = TruncadoMarcelo(lista[i], 4);
             }
+        }
+
+
+        //Función que une una matriz con un array, teniendo en cuenta la ultima fila del Array
+        public double [,] concatenarMatriz(double[,] matriz, double[] array)
+        {
+
+            double[,] nuevaMatriz= new double[array.Length, matriz.GetLength(1) + 1];
+            
+            for (int i = 0; i < matriz.GetLength(0); i++)
+            {
+                for (int j = 0; j < matriz.GetLength(1); j++)
+                {
+                    nuevaMatriz[i, j] = matriz[i, j];
+                }
+                nuevaMatriz[i, matriz.GetLength(1)] = array[i];
+            }
+
+            nuevaMatriz[array.Length - 1, matriz.GetLength(1)] = array[array.Length - 1];
+            return nuevaMatriz;
+        
         }
 
 
