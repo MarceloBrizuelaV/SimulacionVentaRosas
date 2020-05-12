@@ -40,6 +40,8 @@ namespace Trabajo_Practico_4
                 h.matrizAGrid(matriz, dataTablaBase, 2);
                 h.setearTipoDia(dataTablaBase, 2);
                 dataTablaBase.Rows.Add();
+                dataTablaBase.Rows[dataTablaBase.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Black;
+                h.formatearDataGridTexto(dataTablaBase);
             }
 
             txtPromedioGanancia.Text = (acumuladoGananciaSimulaciones / Convert.ToDouble(txtSimulaciones.Text)).ToString();
@@ -67,6 +69,8 @@ namespace Trabajo_Practico_4
                 h.matrizAGrid(matriz, dataTablaBase, 2);
                 h.setearTipoDia(dataTablaBase, 2);
                 dataTablaBase.Rows.Add();
+                dataTablaBase.Rows[dataTablaBase.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Black;
+                h.formatearDataGridTexto(dataTablaBase);
             }
             txtPromedioGanancia.Text = (acumuladoGananciaSimulaciones / Convert.ToDouble(txtSimulaciones.Text)).ToString();
         }

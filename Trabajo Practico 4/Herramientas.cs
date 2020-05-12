@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -193,7 +194,15 @@ namespace Trabajo_Practico_4
             }
         }
 
-        
+        public void formatearDataGridTexto(DataGridView dataGridView)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                dataGridView.Rows[dataGridView.Rows.Count - 2].Cells[i].Value = "";
+                //dataGridView.Rows[dataGridView.Rows.Count - 2].DefaultCellStyle.BackColor = Color.Beige;
+            }
+            dataGridView.Rows[dataGridView.Rows.Count - 2].Cells[3].Value = "Ganancia Promedio Simulacion";
+        }
 
     }
 }
