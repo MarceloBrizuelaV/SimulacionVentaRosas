@@ -204,5 +204,18 @@ namespace Trabajo_Practico_4
             dataGridView.Rows[dataGridView.Rows.Count - 2].Cells[3].Value = "Ganancia Promedio Simulacion";
         }
 
+        public void calcularValoresAcumulados(DataGridView grilla)
+        {
+            double primerValor = Convert.ToDouble(grilla.Rows[0].Cells[4].Value);
+            grilla.Rows[0].Cells[5].Value = primerValor;
+            for (int i = 1; i < grilla.Rows.Count; i++)
+            {
+                double anterior = Convert.ToDouble(grilla.Rows[i].Cells[4].Value);
+                double alLado = Convert.ToDouble(grilla.Rows[i - 1].Cells[5].Value);
+                grilla.Rows[i].Cells[5].Value = anterior + alLado;
+            }
+        }
     }
+
+
 }

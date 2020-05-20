@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.dataTablaBase = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ganancias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCantidadDia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,11 +59,9 @@
             this.txtPerdidaPorFaltante = new System.Windows.Forms.TextBox();
             this.gbVariables = new System.Windows.Forms.GroupBox();
             this.cbNumerosAleatorios = new System.Windows.Forms.CheckBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ganancias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDesde = new System.Windows.Forms.TextBox();
+            this.txtHasta = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataTablaBase)).BeginInit();
             this.gbVariables.SuspendLayout();
             this.SuspendLayout();
@@ -75,15 +78,50 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.ganancias});
+            this.ganancias,
+            this.Column5});
             this.dataTablaBase.Location = new System.Drawing.Point(12, 12);
             this.dataTablaBase.Name = "dataTablaBase";
             this.dataTablaBase.ReadOnly = true;
             this.dataTablaBase.RowHeadersVisible = false;
             this.dataTablaBase.RowHeadersWidth = 51;
             this.dataTablaBase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataTablaBase.Size = new System.Drawing.Size(500, 308);
+            this.dataTablaBase.Size = new System.Drawing.Size(540, 308);
             this.dataTablaBase.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Dia";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Clima";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Demanda";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Venta";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // ganancias
+            // 
+            this.ganancias.HeaderText = "Ganancias";
+            this.ganancias.Name = "ganancias";
+            this.ganancias.ReadOnly = true;
             // 
             // txtCantidadDia
             // 
@@ -325,45 +363,33 @@
             this.cbNumerosAleatorios.UseVisualStyleBackColor = true;
             this.cbNumerosAleatorios.CheckedChanged += new System.EventHandler(this.cbNumerosAleatorios_CheckedChanged);
             // 
-            // Column1
+            // Column5
             // 
-            this.Column1.HeaderText = "Dia";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.Column5.HeaderText = "GananciaAC";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
-            // Column2
+            // txtDesde
             // 
-            this.Column2.HeaderText = "Clima";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.txtDesde.Location = new System.Drawing.Point(108, 327);
+            this.txtDesde.Name = "txtDesde";
+            this.txtDesde.Size = new System.Drawing.Size(100, 20);
+            this.txtDesde.TabIndex = 28;
             // 
-            // Column3
+            // txtHasta
             // 
-            this.Column3.HeaderText = "Demanda";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Venta";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // ganancias
-            // 
-            this.ganancias.HeaderText = "Ganancias";
-            this.ganancias.Name = "ganancias";
-            this.ganancias.ReadOnly = true;
+            this.txtHasta.Location = new System.Drawing.Point(269, 327);
+            this.txtHasta.Name = "txtHasta";
+            this.txtHasta.Size = new System.Drawing.Size(100, 20);
+            this.txtHasta.TabIndex = 29;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 679);
+            this.ClientSize = new System.Drawing.Size(619, 679);
+            this.Controls.Add(this.txtHasta);
+            this.Controls.Add(this.txtDesde);
             this.Controls.Add(this.cbNumerosAleatorios);
             this.Controls.Add(this.gbVariables);
             this.Controls.Add(this.cbVariables);
@@ -424,6 +450,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn ganancias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.TextBox txtDesde;
+        private System.Windows.Forms.TextBox txtHasta;
     }
 }
 

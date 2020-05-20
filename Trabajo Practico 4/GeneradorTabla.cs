@@ -3,38 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Trabajo_Practico_4
 {
     class GeneradorTabla
     {
         Random rnd = new Random();
+        public double demandaGlobal
+        {
+            get { return demandaGlobal; }
+            set { demandaGlobal = value; }
+        }
 
         //Generador de Random para el dia
 
-        public double[] generadorRandomDemanda(int cantidad, Boolean valoresFijos)
+        public double generadorRandomDemanda(int i, Boolean valoresFijos)
         {
             if (valoresFijos)
             {
                 double[] valoresDemanda = { 0.31, 0.87, 0.78, 0.97, 0.38, 0.63, 0.35, 0.83, 0.31, 0.14, 0.44, 0.68, 0.24, 0.06, 0.22, 0.9, 0.27 ,0.77, 0.1, 0.29 };
-                return valoresDemanda;
+
+                return valoresDemanda[i];
             }
             else
-            {
-                double[] valoresDemanda = new double[cantidad];
-
-                for (int i = 0; i < cantidad; i++)
-                {
-                    valoresDemanda[i] = rnd.NextDouble();
-                }
-
-                return valoresDemanda;
+            {        
+                return rnd.NextDouble();
             }
         }
 
 
 
-        public double[] generadorRandomClima(int cantidad, Boolean valoresFijos) 
+        public double generadorRandomClima(int i, Boolean valoresFijos) 
         {
             
 
@@ -42,18 +42,11 @@ namespace Trabajo_Practico_4
             {
                 double[] valoresClima = { 0.72,0.33,0.39,0.86,0.85,0.37,0.3,0.48,0.31,0.97,0.4,0.91,0.73,0.33,0.53,0.55,0.59,0.01,0.57,0.8 };
 
-                return valoresClima;
+                return valoresClima[i];
             }
             else 
             {
-                double[] valoresClima = new double[cantidad];
-
-                for (int i = 0; i < cantidad; i++)
-                {
-                    valoresClima[i] = rnd.NextDouble();
-                }
-
-                return valoresClima;
+                return rnd.NextDouble();
             }
 
         }
@@ -119,39 +112,43 @@ namespace Trabajo_Practico_4
         }
 
 
-        public double[,] tablaBase(int cantidad, Boolean valoresFijos, double precioVenta) 
+            public double[,] tablaBase(int reserva, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeCompra, int iteracion, Boolean aleatorio, GeneradorTabla objeto, double acumulada) 
         {
-            double[] demanda = generadorRandomDemanda(cantidad, valoresFijos);
-            double[] clima = generadorRandomClima(cantidad, valoresFijos);
+            double demanda = generadorRandomDemanda(iteracion, aleatorio);
+            double clima = generadorRandomClima(iteracion, aleatorio);
 
+            Solucion1 ganancia = new Solucion1();
 
-            double[,] matrizBase = new double[cantidad,4];
+            double[,] matrizBase = new double[1,6];
 
-            for (int i = 0; i < cantidad; i++)
-            {
-                //Cuento las iteraciones
-                matrizBase[i, 0] = i + 1;
+            //Cuento las iteraciones
+            matrizBase[0, 0] = iteracion + 1;
 
-                //Obtengo el clima
-                int climaFinal = getClima(clima[i]);
-                matrizBase[i, 1] = Convert.ToDouble(climaFinal);
+            //Obtengo el clima
+            int climaFinal = getClima(clima);
+            matrizBase[0, 1] = Convert.ToDouble(climaFinal);
 
-                //Obtengo la demanda
-                int demandaFinal = getDemanda(demanda[i], climaFinal);
-                matrizBase[i, 2] = Convert.ToDouble(demandaFinal);
+            //Obtengo la demanda
+            int demandaFinal = getDemanda(demanda, climaFinal);
+            matrizBase[0, 2] = Convert.ToDouble(demandaFinal);
 
-                //Calculo el precio
-                double precio = demandaFinal * precioVenta;
-                matrizBase[i, 3] = precio;
-            }
+            //Calculo el precio
+            double precio = demandaFinal * precioVenta;
+            matrizBase[0, 3] = precio;
+
+            //Obtengo la ganancia
+            matrizBase[0, 4] = ganancia.calcularPrueba(matrizBase,reserva,precioVenta,precioVentaCementerio,precioCompra,precioCompraFaltante,diaAnterior,puedeCompra, objeto);
+
+            //Guardo la acumulada
+            matrizBase[0, 5] = matrizBase[0, 4] + acumulada;
 
             return matrizBase;
         }
 
-        public double[,] tablaBase()
+        /*/public double[,] tablaBase()
         {
             return tablaBase(20, true, 12);
-        }
+        }/*/
 
     }
 

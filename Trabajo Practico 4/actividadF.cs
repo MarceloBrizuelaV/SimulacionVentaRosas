@@ -9,7 +9,7 @@ namespace Trabajo_Practico_4
 {
     class actividadF
     {
-        public double[,] segundaSolucion(int cantidadDias, int cantReservada, double precioVenta, Boolean diaAnterior, Boolean Aleatorio)
+        /*/public double[,] segundaSolucion(int cantidadDias, int cantReservada, double precioVenta, Boolean diaAnterior, Boolean Aleatorio)
         {
             GeneradorTabla generador = new GeneradorTabla();
             actividadF calc = new actividadF();
@@ -45,7 +45,7 @@ namespace Trabajo_Practico_4
 
             double[,] matriz = h.concatenarMatriz(tabla, ganancias);
             return matriz;
-        }
+        } /*/
 
 
         private double[] calcular(double[,] matriz, int reserva, Boolean diaAnterior)

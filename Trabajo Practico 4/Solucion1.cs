@@ -9,7 +9,7 @@ namespace Trabajo_Practico_4
 {
     class Solucion1
     {
-        public double[,] primeraSolucion(DataGridView dataGridView, int cantidadSimulaciones, int cantidadDias, int cantReservada, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeComprar, Boolean Aleatorio, Boolean cambiarVariables)
+        /*/public double[,] primeraSolucion(DataGridView dataGridView, int cantidadSimulaciones, int cantidadDias, int cantReservada, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeComprar, Boolean Aleatorio, Boolean cambiarVariables)
         {
             GeneradorTabla generador = new GeneradorTabla();
             Solucion1 calc = new Solucion1();
@@ -22,25 +22,25 @@ namespace Trabajo_Practico_4
             {
                 if (Aleatorio)
                 {
-                    tabla = generador.tablaBase(cantidadDias, !Aleatorio, precioVenta);
+                    //tabla = generador.tablaBase(cantidadDias, !Aleatorio, precioVenta);
                 }
                 else
                 {
-                    tabla = generador.tablaBase(20, true, precioVenta);
+                    //tabla = generador.tablaBase(20, true, precioVenta);
                 }
-                ganancias = calc.calcular(tabla, cantReservada, precioVenta, precioVentaCementerio, precioCompra, precioCompraFaltante, diaAnterior, puedeComprar);
+                //ganancias = calc.calcular(tabla, cantReservada, precioVenta, precioVentaCementerio, precioCompra, precioCompraFaltante, diaAnterior, puedeComprar);
             }
             else
             {
                 if (Aleatorio)
                 {
-                    tabla = generador.tablaBase(cantidadDias, !Aleatorio, 12);
+                    //tabla = generador.tablaBase(cantidadDias, !Aleatorio, 12);
                 }
                 else
                 {
-                    tabla = generador.tablaBase(20, true, 12);
+                    //tabla = generador.tablaBase(20, true, 12);
                 }
-                ganancias = calc.calcular(tabla, cantReservada, 12, 1.2, 8, 11, diaAnterior, puedeComprar);
+                //ganancias = calc.calcular(tabla, cantReservada, 12, 1.2, 8, 11, diaAnterior, puedeComprar);
             }
 
 
@@ -51,13 +51,12 @@ namespace Trabajo_Practico_4
             return matriz;
 
             
-        }
+        }/*/
 
         //Funcion del calculo de la ganancia por dia
-        public double[] calcular(double[,] matriz, int cantReservada, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeComprar)
+      /*/  public double calcular(double[,] matriz, int cantReservada, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeComprar, GeneradorTabla objeto)
         {
-            double[] columna = new double[matriz.GetLength(0) + 1];
-            double gananciaAcumulada = 0;
+            double columna = 0;
 
             //Resolucion del inciso D, aplicando a los incisos A, B y C
             //En este caso puede comprar a otro precio en caso de faltarle
@@ -73,16 +72,15 @@ namespace Trabajo_Practico_4
                         double venta = matriz[i, matriz.GetLength(1) - 1];
                         if (demanda <= cantReservada)
                         {
-                            columna[i] = (venta + (cantReservada - demanda) * precioVentaCementerio) - costo;
+                            columna = (venta + (cantReservada - demanda) * precioVentaCementerio) - costo;
                         }
                         else
                         {
-                            columna[i] = (venta - costo - (demanda - cantReservada) * precioCompraFaltante);
+                            columna = (venta - costo - (demanda - cantReservada) * precioCompraFaltante);
                         }
-                        cantReservada = Convert.ToInt32(demanda);
-                        gananciaAcumulada += columna[i];
+                        objeto.demandaGlobal = Convert.ToInt32(demanda);
+
                     }
-                    columna[columna.Length - 1] = gananciaAcumulada;
                     return columna;
                 }
 
@@ -96,15 +94,13 @@ namespace Trabajo_Practico_4
                         double venta = matriz[i, matriz.GetLength(1) - 1];
                         if (demanda <= cantReservada)
                         {
-                            columna[i] = (venta + (cantReservada - demanda) * precioVentaCementerio) - costo;
+                            columna = (venta + (cantReservada - demanda) * precioVentaCementerio) - costo;
                         }
                         else
                         {
-                            columna[i] = (venta - (demanda - cantReservada) * precioCompraFaltante) - costo;
+                            columna = (venta - (demanda - cantReservada) * precioCompraFaltante) - costo;
                         }
-                        gananciaAcumulada += columna[i];
                     }
-                    columna[columna.Length - 1] = gananciaAcumulada;
                     return columna;
                 }
             }
@@ -117,20 +113,18 @@ namespace Trabajo_Practico_4
                 for (int i = 0; i < matriz.GetLength(0); i++)
                 {
                     double costo = cantReservada * precioCompra;
-                    double demanda = matriz[i, matriz.GetLength(1) - 2];
-                    double venta = matriz[i, matriz.GetLength(1) - 1];
+                    double demanda = matriz[i, matriz.GetLength(1) - 4];
+                    double venta = matriz[i, matriz.GetLength(1) - 3];
                     if (demanda < cantReservada)
                     {
-                        columna[i] = (venta + (cantReservada - demanda) * precioVentaCementerio) - costo;
+                        columna = (venta + (cantReservada - demanda) * precioVentaCementerio) - costo;
                     }
                     else
                     {
-                        columna[i] = (venta - (demanda - cantReservada) * precioVenta) - costo;
+                        columna = (venta - (demanda - cantReservada) * precioVenta) - costo;
                     }
-                    cantReservada = Convert.ToInt32(demanda);
-                    gananciaAcumulada += columna[i];
+                    objeto.demandaGlobal = Convert.ToInt32(demanda);
                     }
-                columna[columna.Length - 1] = gananciaAcumulada;
                 return columna;
             }
             else
@@ -138,25 +132,64 @@ namespace Trabajo_Practico_4
                 double costo = cantReservada * precioCompra;
                 for (int i = 0; i < matriz.GetLength(0); i++)
                 {
-                    double demanda = matriz[i, matriz.GetLength(1) - 2];
-                    double venta = matriz[i, matriz.GetLength(1) - 1];
+                    double demanda = matriz[i, matriz.GetLength(1) - 4];
+                    double venta = matriz[i, matriz.GetLength(1) - 3];
                     if (demanda < cantReservada)
                     {
-                        columna[i] = (venta + (cantReservada - demanda) * precioVentaCementerio) - costo;
+                        columna = (venta + (cantReservada - demanda) * precioVentaCementerio) - costo;
                     }
                     else
                     {
-                        columna[i] = (venta - (demanda - cantReservada) * precioVenta) - costo;
+                        columna = (venta - (demanda - cantReservada) * precioVenta) - costo;
                     }
-
-                    gananciaAcumulada += columna[i];
                 }
-                columna[columna.Length - 1] = gananciaAcumulada;
                 return columna;
             }
+        } /*/
+
+        public double calcularPrueba(double[,] matriz, int cantReservada, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeComprar, GeneradorTabla objeto) 
+        {
+            double columna = 0;
+
+            if (puedeComprar)
+            {
+                double costo = cantReservada * precioCompra;
+                for (int i = 0; i < matriz.GetLength(0); i++)
+                {
+                    double demanda = matriz[i, matriz.GetLength(1) - 4];
+                    double venta = matriz[i, matriz.GetLength(1) - 3];
+                    if (demanda <= cantReservada)
+                    {
+                        columna = (venta + (cantReservada - demanda) * precioVentaCementerio) - costo;
+                    }
+                    else
+                    {
+                        columna = (venta - (demanda - cantReservada) * precioCompraFaltante) - costo;
+                    }
+                }
+                return columna;
+            }
+            else
+            {
+                double costo = cantReservada * precioCompra;
+                for (int i = 0; i < matriz.GetLength(0); i++)
+                {
+                    double demanda = matriz[i, matriz.GetLength(1) - 4];
+                    double venta = matriz[i, matriz.GetLength(1) - 3];
+                    if (demanda < cantReservada)
+                    {
+                        columna = (venta + (cantReservada - demanda) * precioVentaCementerio) - costo;
+                    }
+                    else
+                    {
+                        columna = (venta - (demanda - cantReservada) * precioVenta) - costo;
+                    }
+                }
+                return columna;
+            }
+
         }
 
-        
         //Calculo del promedio a partir de un array (el ultimo dato del mismo tiene que tener la sumatoria)
         public double calcularPromedio(double[] col)
         {
