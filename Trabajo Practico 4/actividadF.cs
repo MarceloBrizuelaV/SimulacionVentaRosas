@@ -48,25 +48,14 @@ namespace Trabajo_Practico_4
         } /*/
 
 
-        private double[] calcular(double[,] matriz, int reserva, Boolean diaAnterior)
+        public double calcular(double[,] matriz, int reserva, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeComprar)
         //double[,] matriz, int cantReservada, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeComprar
 
         {
-            GeneradorTabla tabla = new GeneradorTabla();
-            double gananciaAcumulada = 0;
-
-            //Busco la matriz original.
-            //double[,] matriz = new double[cantidad,4];
-            double[] columna = new double[matriz.GetLength(0) + 1];
-            
-            //matriz = tabla.tablaBase(cantidad, true, 12);
+            double columna = 0;
             double perdida = 1.20;
-            
 
-            //Realizo una matriz con los datos de ganancia y los dias.
-            //double[] columna = new double[cantidad + 1];
-
-            if (diaAnterior)
+            if (puedeComprar)
             {
 
                 for (int i = 0; i < matriz.GetLength(0); i++)
@@ -77,18 +66,16 @@ namespace Trabajo_Practico_4
 
                     if (demanda > reserva)
                     {
-                        columna[i] = ((precio - (demanda - reserva) * 12) - (demanda - reserva) * perdida) - gastado;
+                        columna = ((precio - (demanda - reserva) * 12) - (demanda - reserva) * perdida) - gastado;
                     }
 
                     else
                     {
-                        columna[i] = ((precio) - (reserva - demanda) * perdida) - gastado;
+                        columna = ((precio) - (reserva - demanda) * perdida) - gastado;
                     }
 
-                    //columna[columna.GetLength(0) - 1] += columna[i];
-                    gananciaAcumulada += columna[i];
-                    reserva = Convert.ToInt32(demanda);
                 }
+
             }
             else
             {
@@ -100,19 +87,16 @@ namespace Trabajo_Practico_4
 
                     if (demanda > reserva)
                     {
-                        columna[i] = ((precio - (demanda - reserva) * 12) - (demanda - reserva) * perdida) - gastado;
+                        columna = ((precio - (demanda - reserva) * 12) - (demanda - reserva) * perdida) - gastado;
                     }
 
                     else
                     {
-                        columna[i] = ((precio) - (reserva - demanda) * perdida) - gastado;
+                        columna = ((precio) - (reserva - demanda) * perdida) - gastado;
                     }
 
-                    gananciaAcumulada += columna[i];
-                    //columna[columna.GetLength(0) - 1] += columna[i];
                 }
             }
-            columna[columna.Length - 1] = gananciaAcumulada;
             return columna;           
         }
 

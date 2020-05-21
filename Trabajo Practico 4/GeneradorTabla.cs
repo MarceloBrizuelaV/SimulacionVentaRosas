@@ -145,6 +145,39 @@ namespace Trabajo_Practico_4
             return matrizBase;
         }
 
+        public double[,] tablaBase1(int reserva, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeCompra, int iteracion, Boolean aleatorio, GeneradorTabla objeto, double acumulada)
+        {
+            double demanda = generadorRandomDemanda(iteracion, aleatorio);
+            double clima = generadorRandomClima(iteracion, aleatorio);
+
+            actividadF ganancia = new actividadF();
+
+            double[,] matrizBase = new double[1, 6];
+
+            //Cuento las iteraciones
+            matrizBase[0, 0] = iteracion + 1;
+
+            //Obtengo el clima
+            int climaFinal = getClima(clima);
+            matrizBase[0, 1] = Convert.ToDouble(climaFinal);
+
+            //Obtengo la demanda
+            int demandaFinal = getDemanda(demanda, climaFinal);
+            matrizBase[0, 2] = Convert.ToDouble(demandaFinal);
+
+            //Calculo el precio
+            double precio = demandaFinal * precioVenta;
+            matrizBase[0, 3] = precio;
+
+            //Obtengo la ganancia
+            matrizBase[0, 4] = ganancia.calcular(matrizBase, reserva, precioVenta, precioVentaCementerio, precioCompra, precioCompraFaltante, diaAnterior, puedeCompra);
+
+            //Guardo la acumulada
+            matrizBase[0, 5] = matrizBase[0, 4] + acumulada;
+
+            return matrizBase;
+        }
+
         /*/public double[,] tablaBase()
         {
             return tablaBase(20, true, 12);
