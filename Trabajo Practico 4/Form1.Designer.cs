@@ -34,6 +34,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ganancias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCantidadDia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,9 +60,10 @@
             this.txtPerdidaPorFaltante = new System.Windows.Forms.TextBox();
             this.gbVariables = new System.Windows.Forms.GroupBox();
             this.cbNumerosAleatorios = new System.Windows.Forms.CheckBox();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDesde = new System.Windows.Forms.TextBox();
             this.txtHasta = new System.Windows.Forms.TextBox();
+            this.Desde = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataTablaBase)).BeginInit();
             this.gbVariables.SuspendLayout();
             this.SuspendLayout();
@@ -123,6 +125,12 @@
             this.ganancias.Name = "ganancias";
             this.ganancias.ReadOnly = true;
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "GananciaAC";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
             // txtCantidadDia
             // 
             this.txtCantidadDia.Location = new System.Drawing.Point(12, 438);
@@ -142,7 +150,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(170, 406);
+            this.label2.Location = new System.Drawing.Point(170, 383);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 4;
@@ -177,7 +185,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(412, 399);
+            this.button1.Location = new System.Drawing.Point(452, 399);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 8;
@@ -187,7 +195,7 @@
             // 
             // txtReserva
             // 
-            this.txtReserva.Location = new System.Drawing.Point(173, 422);
+            this.txtReserva.Location = new System.Drawing.Point(173, 399);
             this.txtReserva.Name = "txtReserva";
             this.txtReserva.Size = new System.Drawing.Size(100, 20);
             this.txtReserva.TabIndex = 9;
@@ -195,7 +203,7 @@
             // txtPromedioGanancia
             // 
             this.txtPromedioGanancia.Enabled = false;
-            this.txtPromedioGanancia.Location = new System.Drawing.Point(415, 338);
+            this.txtPromedioGanancia.Location = new System.Drawing.Point(455, 338);
             this.txtPromedioGanancia.Margin = new System.Windows.Forms.Padding(2);
             this.txtPromedioGanancia.Name = "txtPromedioGanancia";
             this.txtPromedioGanancia.Size = new System.Drawing.Size(97, 20);
@@ -204,7 +212,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(412, 323);
+            this.label4.Location = new System.Drawing.Point(452, 323);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 13);
@@ -213,7 +221,7 @@
             // 
             // btnF
             // 
-            this.btnF.Location = new System.Drawing.Point(412, 435);
+            this.btnF.Location = new System.Drawing.Point(452, 435);
             this.btnF.Margin = new System.Windows.Forms.Padding(2);
             this.btnF.Name = "btnF";
             this.btnF.Size = new System.Drawing.Size(100, 23);
@@ -225,7 +233,7 @@
             // cbPuedeComprar
             // 
             this.cbPuedeComprar.AutoSize = true;
-            this.cbPuedeComprar.Location = new System.Drawing.Point(413, 363);
+            this.cbPuedeComprar.Location = new System.Drawing.Point(453, 363);
             this.cbPuedeComprar.Name = "cbPuedeComprar";
             this.cbPuedeComprar.Size = new System.Drawing.Size(99, 17);
             this.cbPuedeComprar.TabIndex = 14;
@@ -246,7 +254,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(126, 24);
+            this.label5.Location = new System.Drawing.Point(156, 24);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label5.Size = new System.Drawing.Size(83, 13);
@@ -256,7 +264,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(126, 76);
+            this.label6.Location = new System.Drawing.Point(156, 76);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label6.Size = new System.Drawing.Size(91, 13);
@@ -266,7 +274,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(239, 76);
+            this.label7.Location = new System.Drawing.Point(269, 76);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label7.Size = new System.Drawing.Size(118, 13);
@@ -276,7 +284,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(239, 24);
+            this.label8.Location = new System.Drawing.Point(269, 24);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label8.Size = new System.Drawing.Size(123, 13);
@@ -286,7 +294,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(185, 128);
+            this.label9.Location = new System.Drawing.Point(215, 128);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label9.Size = new System.Drawing.Size(99, 13);
@@ -295,7 +303,7 @@
             // 
             // txtPrecioVenta
             // 
-            this.txtPrecioVenta.Location = new System.Drawing.Point(129, 40);
+            this.txtPrecioVenta.Location = new System.Drawing.Point(159, 40);
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPrecioVenta.Size = new System.Drawing.Size(100, 20);
@@ -303,7 +311,7 @@
             // 
             // txtPrecioCompra
             // 
-            this.txtPrecioCompra.Location = new System.Drawing.Point(129, 92);
+            this.txtPrecioCompra.Location = new System.Drawing.Point(159, 92);
             this.txtPrecioCompra.Name = "txtPrecioCompra";
             this.txtPrecioCompra.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPrecioCompra.Size = new System.Drawing.Size(100, 20);
@@ -311,7 +319,7 @@
             // 
             // txtPrecioCompraFaltantes
             // 
-            this.txtPrecioCompraFaltantes.Location = new System.Drawing.Point(242, 92);
+            this.txtPrecioCompraFaltantes.Location = new System.Drawing.Point(272, 92);
             this.txtPrecioCompraFaltantes.Name = "txtPrecioCompraFaltantes";
             this.txtPrecioCompraFaltantes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPrecioCompraFaltantes.Size = new System.Drawing.Size(100, 20);
@@ -319,7 +327,7 @@
             // 
             // txtPrecioVentaCementerio
             // 
-            this.txtPrecioVentaCementerio.Location = new System.Drawing.Point(242, 40);
+            this.txtPrecioVentaCementerio.Location = new System.Drawing.Point(272, 40);
             this.txtPrecioVentaCementerio.Name = "txtPrecioVentaCementerio";
             this.txtPrecioVentaCementerio.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPrecioVentaCementerio.Size = new System.Drawing.Size(100, 20);
@@ -327,7 +335,7 @@
             // 
             // txtPerdidaPorFaltante
             // 
-            this.txtPerdidaPorFaltante.Location = new System.Drawing.Point(184, 144);
+            this.txtPerdidaPorFaltante.Location = new System.Drawing.Point(214, 144);
             this.txtPerdidaPorFaltante.Name = "txtPerdidaPorFaltante";
             this.txtPerdidaPorFaltante.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPerdidaPorFaltante.Size = new System.Drawing.Size(100, 20);
@@ -347,7 +355,7 @@
             this.gbVariables.Controls.Add(this.txtPrecioVenta);
             this.gbVariables.Location = new System.Drawing.Point(12, 487);
             this.gbVariables.Name = "gbVariables";
-            this.gbVariables.Size = new System.Drawing.Size(500, 180);
+            this.gbVariables.Size = new System.Drawing.Size(540, 180);
             this.gbVariables.TabIndex = 26;
             this.gbVariables.TabStop = false;
             this.gbVariables.Text = "Variables";
@@ -363,31 +371,45 @@
             this.cbNumerosAleatorios.UseVisualStyleBackColor = true;
             this.cbNumerosAleatorios.CheckedChanged += new System.EventHandler(this.cbNumerosAleatorios_CheckedChanged);
             // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "GananciaAC";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
             // txtDesde
             // 
-            this.txtDesde.Location = new System.Drawing.Point(108, 327);
+            this.txtDesde.Location = new System.Drawing.Point(173, 438);
             this.txtDesde.Name = "txtDesde";
-            this.txtDesde.Size = new System.Drawing.Size(100, 20);
+            this.txtDesde.Size = new System.Drawing.Size(50, 20);
             this.txtDesde.TabIndex = 28;
             // 
             // txtHasta
             // 
-            this.txtHasta.Location = new System.Drawing.Point(269, 327);
+            this.txtHasta.Location = new System.Drawing.Point(229, 438);
             this.txtHasta.Name = "txtHasta";
-            this.txtHasta.Size = new System.Drawing.Size(100, 20);
+            this.txtHasta.Size = new System.Drawing.Size(50, 20);
             this.txtHasta.TabIndex = 29;
+            // 
+            // Desde
+            // 
+            this.Desde.AutoSize = true;
+            this.Desde.Location = new System.Drawing.Point(170, 422);
+            this.Desde.Name = "Desde";
+            this.Desde.Size = new System.Drawing.Size(38, 13);
+            this.Desde.TabIndex = 30;
+            this.Desde.Text = "Desde";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(226, 422);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Hasta";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 679);
+            this.ClientSize = new System.Drawing.Size(565, 679);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.Desde);
             this.Controls.Add(this.txtHasta);
             this.Controls.Add(this.txtDesde);
             this.Controls.Add(this.cbNumerosAleatorios);
@@ -453,6 +475,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.TextBox txtDesde;
         private System.Windows.Forms.TextBox txtHasta;
+        private System.Windows.Forms.Label Desde;
+        private System.Windows.Forms.Label label10;
     }
 }
 

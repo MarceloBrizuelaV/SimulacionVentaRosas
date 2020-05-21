@@ -144,12 +144,6 @@ namespace Trabajo_Practico_4
 
             return matrizBase;
         }
-
-        /*/public double[,] tablaBase()
-        {
-            return tablaBase(20, true, 12);
-        }/*/
-
     }
 
     

@@ -198,10 +198,11 @@ namespace Trabajo_Practico_4
         {
             for (int i = 0; i < 3; i++)
             {
-                dataGridView.Rows[dataGridView.Rows.Count - 2].Cells[i].Value = "";
+                //dataGridView.Rows.Add();
+                dataGridView.Rows[dataGridView.Rows.Count - 1].Cells[i].Value = "";
                 //dataGridView.Rows[dataGridView.Rows.Count - 2].DefaultCellStyle.BackColor = Color.Beige;
             }
-            dataGridView.Rows[dataGridView.Rows.Count - 2].Cells[3].Value = "Ganancia Promedio Simulacion";
+            dataGridView.Rows[dataGridView.Rows.Count - 1].Cells[4].Value = "Ganancia Promedio Simulacion";
         }
 
         public void calcularValoresAcumulados(DataGridView grilla)
