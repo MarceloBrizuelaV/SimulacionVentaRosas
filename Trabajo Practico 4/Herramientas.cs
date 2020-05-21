@@ -23,23 +23,22 @@ namespace Trabajo_Practico_4
         }
 
         //Funcion estetica para mostrar el tipo de dia por String en vez de un int
-        public void setearTipoDia(DataGridView dataGridView, int numColumna)
+        public String setearTipoDia(double val)
         {
-            numColumna -= 1;
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
-            {
-                switch (dataGridView.Rows[i].Cells[numColumna].Value)
+            String err= "";
+                switch (Convert.ToInt32(val))
                 {
-                    case "1":
-                        dataGridView.Rows[i].Cells[numColumna].Value = "Soleado";
+                    case 1:
+                        return "Soleado";
                         break;
-                    case "2":
-                        dataGridView.Rows[i].Cells[numColumna].Value = "Nublado";
+                    case 2:
+                        return "Nublado";
                         break;
                     default:
                         break;
                 }
-            }
+            return err;
+        
         }
 
         //Esta funcion agrega los datos al datagrid
