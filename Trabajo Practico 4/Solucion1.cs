@@ -9,7 +9,7 @@ namespace Trabajo_Practico_4
 {
     class Solucion1
     {
-        public double calcularPrueba(double[,] matriz, int cantReservada, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeComprar, GeneradorTabla objeto) 
+        public double calcularPrueba(double[,] matriz, int cantReservada, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeComprar) 
         {
             double columna = 0;
 

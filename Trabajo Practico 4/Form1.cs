@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Trabajo_Practico_4
@@ -21,7 +16,6 @@ namespace Trabajo_Practico_4
         {
             dataTablaBase.Rows.Clear();
             
-            Solucion1 calc = new Solucion1();
             GeneradorTabla generador = new GeneradorTabla();
             Herramientas h = new Herramientas();
 
@@ -37,7 +31,6 @@ namespace Trabajo_Practico_4
             double acumulada = 0;
             double acumuladaProm = 0;
             double reserva = Convert.ToInt32(txtReserva.Text);
-            GeneradorTabla guardacion = new GeneradorTabla();
 
             //TODOS LAS FUNCIONES MATRIZ = GENERAR.TABLABASE tienen el valor booleano invertido
             for (int j = 0; j < cantidadSimulaciones; j++)
@@ -54,7 +47,7 @@ namespace Trabajo_Practico_4
                             {
                                 matriz = generador.tablaBase(Convert.ToInt32(reserva),
                                 Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text),
-                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, guardacion, acumulada);
+                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, acumulada);
 
                                 reserva = matriz[0, 4];
                                 acumulada = matriz[0, 7];
@@ -93,7 +86,7 @@ namespace Trabajo_Practico_4
                             {
                                 matriz = generador.tablaBase(Convert.ToInt32(reserva),
                                 Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text),
-                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, guardacion, acumulada);
+                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, acumulada);
 
                                 acumulada = matriz[0, 7];
 
@@ -136,7 +129,7 @@ namespace Trabajo_Practico_4
                             {
                                 matriz = generador.tablaBase(Convert.ToInt32(reserva),
                                 Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text),
-                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, guardacion, acumulada);
+                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, acumulada);
 
                                 reserva = matriz[0, 4];
                                 acumulada = matriz[0, 7];
@@ -175,7 +168,7 @@ namespace Trabajo_Practico_4
                             {
                                 matriz = generador.tablaBase(Convert.ToInt32(reserva),
                                 Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text),
-                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, guardacion, acumulada);
+                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, acumulada);
 
                                 //reserva = matriz[0, 2];
                                 acumulada = matriz[0, 7];
@@ -216,7 +209,7 @@ namespace Trabajo_Practico_4
                         {
                             for (int i = 0; i < cantidadDias; i++)
                             {
-                                matriz = generador.tablaBase(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, guardacion, acumulada);
+                                matriz = generador.tablaBase(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, acumulada);
 
                                 reserva = matriz[0, 4];
                                 acumulada = matriz[0, 7];
@@ -253,7 +246,7 @@ namespace Trabajo_Practico_4
                             for (int i = 0; i < cantidadDias; i++)
                             {
 
-                                matriz = generador.tablaBase(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, guardacion, acumulada);
+                                matriz = generador.tablaBase(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, acumulada);
 
                                 acumulada = matriz[0, 7];
 
@@ -293,7 +286,7 @@ namespace Trabajo_Practico_4
                         {
                             for (int i = 0; i < 20; i++)
                             {
-                                matriz = generador.tablaBase(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, guardacion, acumulada);
+                                matriz = generador.tablaBase(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, acumulada);
 
                                 reserva = matriz[0, 4];
                                 acumulada = matriz[0, 7];
@@ -330,7 +323,7 @@ namespace Trabajo_Practico_4
                         {
                             for (int i = 0; i < 20; i++)
                             {
-                                matriz = generador.tablaBase(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, guardacion, acumulada);
+                                matriz = generador.tablaBase(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, acumulada);
 
                                 acumulada = matriz[0, 7];
                                 if ((i >= Convert.ToInt32(txtDesde.Text) && i < Convert.ToInt32(txtHasta.Text)) || i == 20 - 1)
@@ -367,7 +360,10 @@ namespace Trabajo_Practico_4
                                 Console.WriteLine("Simulacion Finalizada");
             }
 
-            txtPromedioGanancia.Text = (acumuladaProm / Convert.ToDouble(txtSimulaciones.Text)).ToString();
+            txtPromedioGanancia.Text = h.TruncadoMarcelo((acumuladaProm / Convert.ToDouble(txtSimulaciones.Text)), 4).ToString();
+
+            Herramientas.truncarDataGrid(dataTablaBase, 4);
+
         }
 
 
@@ -375,7 +371,7 @@ namespace Trabajo_Practico_4
         {
             dataTablaBase.Rows.Clear();
 
-            Solucion1 calc = new Solucion1();
+            
             GeneradorTabla generador = new GeneradorTabla();
             Herramientas h = new Herramientas();
 
@@ -392,8 +388,7 @@ namespace Trabajo_Practico_4
             double acumuladaProm = 0;
 
             double reserva = Convert.ToInt32(txtReserva.Text);
-            GeneradorTabla guardacion = new GeneradorTabla();
-
+            
             //TODOS LAS FUNCIONES MATRIZ = GENERAR.TABLABASE tienen el valor booleano invertido
             for (int j = 0; j < cantidadSimulaciones; j++)
             {
@@ -408,7 +403,7 @@ namespace Trabajo_Practico_4
                             {
                                 matriz = generador.tablaBase1(Convert.ToInt32(reserva),
                                 Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text),
-                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, guardacion, acumulada);
+                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, acumulada);
 
                                 reserva = matriz[0, 4];
                                 acumulada = matriz[0, 7];
@@ -447,7 +442,7 @@ namespace Trabajo_Practico_4
                             {
                                 matriz = generador.tablaBase1(Convert.ToInt32(reserva),
                                 Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text),
-                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, guardacion, acumulada);
+                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, acumulada);
 
                                 acumulada = matriz[0, 7];
                                 if ((i >= Convert.ToInt32(txtDesde.Text) && i < Convert.ToInt32(txtHasta.Text)) || i == (Convert.ToInt32(txtCantidadDia.Text)) - 1)
@@ -487,7 +482,7 @@ namespace Trabajo_Practico_4
                             {
                                 matriz = generador.tablaBase1(Convert.ToInt32(reserva),
                                 Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text),
-                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, guardacion, acumulada);
+                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, acumulada);
 
                                 reserva = matriz[0, 4];
                                 acumulada = matriz[0, 7];
@@ -527,7 +522,7 @@ namespace Trabajo_Practico_4
                             {
                                 matriz = generador.tablaBase1(Convert.ToInt32(reserva),
                                 Convert.ToDouble(txtPrecioVenta.Text), Convert.ToDouble(txtPrecioVentaCementerio.Text), Convert.ToDouble(txtPrecioCompra.Text), Convert.ToDouble(txtPrecioCompraFaltantes.Text),
-                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, guardacion, acumulada);
+                                cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, acumulada);
 
                                 //reserva = matriz[0, 2];
                                 acumulada = matriz[0, 7];
@@ -572,7 +567,7 @@ namespace Trabajo_Practico_4
                         {
                             for (int i = 0; i < cantidadDias; i++)
                             {
-                                matriz = generador.tablaBase1(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, guardacion, acumulada);
+                                matriz = generador.tablaBase1(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, acumulada);
 
                                 reserva = matriz[0, 4];
                                 acumulada = matriz[0, 7];
@@ -609,7 +604,7 @@ namespace Trabajo_Practico_4
                             //ACA
                             for (int i = 0; i < cantidadDias; i++)
                             {
-                                matriz = generador.tablaBase1(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, guardacion, acumulada);
+                                matriz = generador.tablaBase1(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, false, acumulada);
 
                                 //reserva = matriz[0, 2];
                                 acumulada = matriz[0, 7];
@@ -649,7 +644,7 @@ namespace Trabajo_Practico_4
                         {
                             for (int i = 0; i < 20; i++)
                             {
-                                matriz = generador.tablaBase1(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, guardacion, acumulada);
+                                matriz = generador.tablaBase1(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, acumulada);
 
                                 reserva = matriz[0, 4];
                                 acumulada = matriz[0, 7];
@@ -685,7 +680,7 @@ namespace Trabajo_Practico_4
                         {
                             for (int i = 0; i < 20; i++)
                             {
-                                matriz = generador.tablaBase1(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, guardacion, acumulada);
+                                matriz = generador.tablaBase1(Convert.ToInt32(reserva), 12, 1.2, 8, 11, cbDiaAnterior.Checked, cbPuedeComprar.Checked, i, true, acumulada);
 
                                 //reserva = matriz[0, 2];
                                 acumulada = matriz[0, 7];
@@ -721,7 +716,10 @@ namespace Trabajo_Practico_4
                 Console.WriteLine("Simulacion F finalizada");
             }
 
-            txtPromedioGanancia.Text = (acumuladaProm / Convert.ToDouble(txtSimulaciones.Text)).ToString();
+            txtPromedioGanancia.Text = h.TruncadoMarcelo((acumuladaProm / Convert.ToDouble(txtSimulaciones.Text)), 4).ToString();
+
+            Herramientas.truncarDataGrid(dataTablaBase, 4);
+
         }
 
 

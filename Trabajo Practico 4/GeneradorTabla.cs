@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Trabajo_Practico_4
 {
@@ -112,7 +107,7 @@ namespace Trabajo_Practico_4
         }
 
 
-            public double[,] tablaBase(int reserva, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeCompra, int iteracion, Boolean aleatorio, GeneradorTabla objeto, double acumulada) 
+            public double[,] tablaBase(int reserva, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeCompra, int iteracion, Boolean aleatorio, double acumulada) 
         {
             double demanda = generadorRandomDemanda(iteracion, aleatorio);
             double clima = generadorRandomClima(iteracion, aleatorio);
@@ -143,7 +138,7 @@ namespace Trabajo_Practico_4
             matrizBase[0, 5] = precio;
 
             //Obtengo la ganancia
-            matrizBase[0, 6] = ganancia.calcularPrueba(matrizBase,reserva,precioVenta,precioVentaCementerio,precioCompra,precioCompraFaltante,diaAnterior,puedeCompra, objeto);
+            matrizBase[0, 6] = ganancia.calcularPrueba(matrizBase,reserva,precioVenta,precioVentaCementerio,precioCompra,precioCompraFaltante,diaAnterior,puedeCompra);
 
             //Guardo la acumulada
             matrizBase[0, 7] = matrizBase[0, 6] + acumulada;
@@ -151,7 +146,7 @@ namespace Trabajo_Practico_4
             return matrizBase;
         }
 
-        public double[,] tablaBase1(int reserva, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeCompra, int iteracion, Boolean aleatorio, GeneradorTabla objeto, double acumulada)
+        public double[,] tablaBase1(int reserva, double precioVenta, double precioVentaCementerio, double precioCompra, double precioCompraFaltante, Boolean diaAnterior, Boolean puedeCompra, int iteracion, Boolean aleatorio, double acumulada)
         {
             double demanda = generadorRandomDemanda(iteracion, aleatorio);
             double clima = generadorRandomClima(iteracion, aleatorio);

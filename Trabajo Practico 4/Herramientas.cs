@@ -135,6 +135,22 @@ namespace Trabajo_Practico_4
             matrizAGrid(nuevaMatriz, dataGridView, 4);
         }
 
+        public static void truncarDataGrid(DataGridView dataGridView, int ordenTruncado)
+        {
+            Herramientas h = new Herramientas();
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            {
+                for (int j = 0; j < dataGridView.Columns.Count; j++)
+                {
+                    if (dataGridView.Rows[i].Cells[j].Value is Double)
+                    {
+                        dataGridView.Rows[i].Cells[j].Value = h.TruncadoMarcelo(Convert.ToDouble(dataGridView.Rows[i].Cells[j].Value), 4);
+                    }
+                    
+                }
+            }
+        }
+
 
 
         //Esta funcion limpia los textbox
