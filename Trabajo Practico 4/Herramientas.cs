@@ -202,7 +202,7 @@ namespace Trabajo_Practico_4
                 dataGridView.Rows[dataGridView.Rows.Count - 1].Cells[i].Value = "";
                 //dataGridView.Rows[dataGridView.Rows.Count - 2].DefaultCellStyle.BackColor = Color.Beige;
             }
-            dataGridView.Rows[dataGridView.Rows.Count - 1].Cells[4].Value = "Ganancia Promedio Simulacion";
+            dataGridView.Rows[dataGridView.Rows.Count - 1].Cells[6].Value = "Ganancia Promedio Simulacion";
         }
 
         public void calcularValoresAcumulados(DataGridView grilla)

@@ -119,28 +119,34 @@ namespace Trabajo_Practico_4
 
             Solucion1 ganancia = new Solucion1();
 
-            double[,] matrizBase = new double[1,6];
+            double[,] matrizBase = new double[1, 8];
 
             //Cuento las iteraciones
             matrizBase[0, 0] = iteracion + 1;
 
+            //Random Clima
+            matrizBase[0, 1] = clima;
+
             //Obtengo el clima
             int climaFinal = getClima(clima);
-            matrizBase[0, 1] = Convert.ToDouble(climaFinal);
+            matrizBase[0, 2] = Convert.ToDouble(climaFinal);
+
+            //Random demanda
+            matrizBase[0, 3] = demanda;
 
             //Obtengo la demanda
             int demandaFinal = getDemanda(demanda, climaFinal);
-            matrizBase[0, 2] = Convert.ToDouble(demandaFinal);
+            matrizBase[0, 4] = Convert.ToDouble(demandaFinal);
 
             //Calculo el precio
             double precio = demandaFinal * precioVenta;
-            matrizBase[0, 3] = precio;
+            matrizBase[0, 5] = precio;
 
             //Obtengo la ganancia
-            matrizBase[0, 4] = ganancia.calcularPrueba(matrizBase,reserva,precioVenta,precioVentaCementerio,precioCompra,precioCompraFaltante,diaAnterior,puedeCompra, objeto);
+            matrizBase[0, 6] = ganancia.calcularPrueba(matrizBase,reserva,precioVenta,precioVentaCementerio,precioCompra,precioCompraFaltante,diaAnterior,puedeCompra, objeto);
 
             //Guardo la acumulada
-            matrizBase[0, 5] = matrizBase[0, 4] + acumulada;
+            matrizBase[0, 7] = matrizBase[0, 6] + acumulada;
 
             return matrizBase;
         }
@@ -152,28 +158,36 @@ namespace Trabajo_Practico_4
 
             actividadF ganancia = new actividadF();
 
-            double[,] matrizBase = new double[1, 6];
+            double[,] matrizBase = new double[1, 8];
 
             //Cuento las iteraciones
             matrizBase[0, 0] = iteracion + 1;
 
+            //Random Clima
+            matrizBase[0, 1] = clima;
+
             //Obtengo el clima
             int climaFinal = getClima(clima);
-            matrizBase[0, 1] = Convert.ToDouble(climaFinal);
+            matrizBase[0, 2] = Convert.ToDouble(climaFinal);
+
+            //Random demanda
+            matrizBase[0, 3] = demanda;
 
             //Obtengo la demanda
             int demandaFinal = getDemanda(demanda, climaFinal);
-            matrizBase[0, 2] = Convert.ToDouble(demandaFinal);
+            matrizBase[0, 4] = Convert.ToDouble(demandaFinal);
 
             //Calculo el precio
             double precio = demandaFinal * precioVenta;
-            matrizBase[0, 3] = precio;
+            matrizBase[0, 5] = precio;
 
             //Obtengo la ganancia
-            matrizBase[0, 4] = ganancia.calcular(matrizBase, reserva, precioVenta, precioVentaCementerio, precioCompra, precioCompraFaltante, diaAnterior, puedeCompra);
+            matrizBase[0, 6] = ganancia.calcular(matrizBase, reserva, precioVenta, precioVentaCementerio, precioCompra, precioCompraFaltante, diaAnterior, puedeCompra);
 
             //Guardo la acumulada
-            matrizBase[0, 5] = matrizBase[0, 4] + acumulada;
+            matrizBase[0, 7] = matrizBase[0, 6] + acumulada;
+
+
 
             return matrizBase;
         }

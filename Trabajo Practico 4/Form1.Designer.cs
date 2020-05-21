@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.dataTablaBase = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ganancias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCantidadDia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +58,14 @@
             this.txtHasta = new System.Windows.Forms.TextBox();
             this.Desde = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ganancias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columna = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataTablaBase)).BeginInit();
             this.gbVariables.SuspendLayout();
             this.SuspendLayout();
@@ -81,55 +83,17 @@
             this.Column3,
             this.Column4,
             this.ganancias,
-            this.Column5});
+            this.Column5,
+            this.columna,
+            this.columnaa});
             this.dataTablaBase.Location = new System.Drawing.Point(12, 12);
             this.dataTablaBase.Name = "dataTablaBase";
             this.dataTablaBase.ReadOnly = true;
             this.dataTablaBase.RowHeadersVisible = false;
             this.dataTablaBase.RowHeadersWidth = 51;
             this.dataTablaBase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataTablaBase.Size = new System.Drawing.Size(540, 308);
+            this.dataTablaBase.Size = new System.Drawing.Size(590, 308);
             this.dataTablaBase.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Dia";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Clima";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Demanda";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Venta";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // ganancias
-            // 
-            this.ganancias.HeaderText = "Ganancias";
-            this.ganancias.Name = "ganancias";
-            this.ganancias.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "GananciaAC";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
             // 
             // txtCantidadDia
             // 
@@ -150,7 +114,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(170, 383);
+            this.label2.Location = new System.Drawing.Point(269, 382);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 4;
@@ -166,7 +130,7 @@
             // cbDiaAnterior
             // 
             this.cbDiaAnterior.AutoSize = true;
-            this.cbDiaAnterior.Location = new System.Drawing.Point(224, 363);
+            this.cbDiaAnterior.Location = new System.Drawing.Point(272, 363);
             this.cbDiaAnterior.Margin = new System.Windows.Forms.Padding(2);
             this.cbDiaAnterior.Name = "cbDiaAnterior";
             this.cbDiaAnterior.Size = new System.Drawing.Size(81, 17);
@@ -185,7 +149,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(452, 399);
+            this.button1.Location = new System.Drawing.Point(502, 396);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 8;
@@ -195,15 +159,15 @@
             // 
             // txtReserva
             // 
-            this.txtReserva.Location = new System.Drawing.Point(173, 399);
+            this.txtReserva.Location = new System.Drawing.Point(266, 399);
             this.txtReserva.Name = "txtReserva";
-            this.txtReserva.Size = new System.Drawing.Size(100, 20);
+            this.txtReserva.Size = new System.Drawing.Size(106, 20);
             this.txtReserva.TabIndex = 9;
             // 
             // txtPromedioGanancia
             // 
             this.txtPromedioGanancia.Enabled = false;
-            this.txtPromedioGanancia.Location = new System.Drawing.Point(455, 338);
+            this.txtPromedioGanancia.Location = new System.Drawing.Point(505, 338);
             this.txtPromedioGanancia.Margin = new System.Windows.Forms.Padding(2);
             this.txtPromedioGanancia.Name = "txtPromedioGanancia";
             this.txtPromedioGanancia.Size = new System.Drawing.Size(97, 20);
@@ -212,7 +176,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(452, 323);
+            this.label4.Location = new System.Drawing.Point(503, 323);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 13);
@@ -221,7 +185,7 @@
             // 
             // btnF
             // 
-            this.btnF.Location = new System.Drawing.Point(452, 435);
+            this.btnF.Location = new System.Drawing.Point(502, 435);
             this.btnF.Margin = new System.Windows.Forms.Padding(2);
             this.btnF.Name = "btnF";
             this.btnF.Size = new System.Drawing.Size(100, 23);
@@ -233,7 +197,7 @@
             // cbPuedeComprar
             // 
             this.cbPuedeComprar.AutoSize = true;
-            this.cbPuedeComprar.Location = new System.Drawing.Point(453, 363);
+            this.cbPuedeComprar.Location = new System.Drawing.Point(506, 363);
             this.cbPuedeComprar.Name = "cbPuedeComprar";
             this.cbPuedeComprar.Size = new System.Drawing.Size(99, 17);
             this.cbPuedeComprar.TabIndex = 14;
@@ -355,7 +319,7 @@
             this.gbVariables.Controls.Add(this.txtPrecioVenta);
             this.gbVariables.Location = new System.Drawing.Point(12, 487);
             this.gbVariables.Name = "gbVariables";
-            this.gbVariables.Size = new System.Drawing.Size(540, 180);
+            this.gbVariables.Size = new System.Drawing.Size(590, 180);
             this.gbVariables.TabIndex = 26;
             this.gbVariables.TabStop = false;
             this.gbVariables.Text = "Variables";
@@ -373,14 +337,14 @@
             // 
             // txtDesde
             // 
-            this.txtDesde.Location = new System.Drawing.Point(173, 438);
+            this.txtDesde.Location = new System.Drawing.Point(266, 437);
             this.txtDesde.Name = "txtDesde";
             this.txtDesde.Size = new System.Drawing.Size(50, 20);
             this.txtDesde.TabIndex = 28;
             // 
             // txtHasta
             // 
-            this.txtHasta.Location = new System.Drawing.Point(229, 438);
+            this.txtHasta.Location = new System.Drawing.Point(322, 437);
             this.txtHasta.Name = "txtHasta";
             this.txtHasta.Size = new System.Drawing.Size(50, 20);
             this.txtHasta.TabIndex = 29;
@@ -388,7 +352,7 @@
             // Desde
             // 
             this.Desde.AutoSize = true;
-            this.Desde.Location = new System.Drawing.Point(170, 422);
+            this.Desde.Location = new System.Drawing.Point(263, 421);
             this.Desde.Name = "Desde";
             this.Desde.Size = new System.Drawing.Size(38, 13);
             this.Desde.TabIndex = 30;
@@ -397,17 +361,69 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(226, 422);
+            this.label10.Location = new System.Drawing.Point(337, 422);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 31;
             this.label10.Text = "Hasta";
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Dia";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Rnd Clima";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Clima";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Rnd Demanda";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // ganancias
+            // 
+            this.ganancias.HeaderText = "Demanda";
+            this.ganancias.Name = "ganancias";
+            this.ganancias.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Venta";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // columna
+            // 
+            this.columna.HeaderText = "Ganancia";
+            this.columna.Name = "columna";
+            this.columna.ReadOnly = true;
+            // 
+            // columnaa
+            // 
+            this.columnaa.HeaderText = "GananciaAC";
+            this.columnaa.Name = "columnaa";
+            this.columnaa.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 679);
+            this.ClientSize = new System.Drawing.Size(614, 679);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.Desde);
             this.Controls.Add(this.txtHasta);
@@ -467,16 +483,18 @@
         private System.Windows.Forms.TextBox txtPerdidaPorFaltante;
         private System.Windows.Forms.GroupBox gbVariables;
         private System.Windows.Forms.CheckBox cbNumerosAleatorios;
+        private System.Windows.Forms.TextBox txtDesde;
+        private System.Windows.Forms.TextBox txtHasta;
+        private System.Windows.Forms.Label Desde;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn ganancias;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.TextBox txtDesde;
-        private System.Windows.Forms.TextBox txtHasta;
-        private System.Windows.Forms.Label Desde;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columna;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaa;
     }
 }
 
